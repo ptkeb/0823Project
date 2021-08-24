@@ -1,6 +1,9 @@
 package controller;
 
 import model.BooksDAO;
+import model.MainCategoryDAO;
+import model.UserDAO;
+import model.dto.MainCategoryDTO;
 import view.EndView;
 
 public class Controller {
@@ -12,11 +15,11 @@ public class Controller {
 	}
 
 	public void getallBooks() {
-		EndView.AllBooksView(BooksDAO.getAllBook());
+		EndView.allBooksView(BooksDAO.getAllBook());
 	}
 
 	public void addBook(String bookName, int categoryId, int renterId) {
-		BooksDAO.addBook(bookName, categoryId);
+		BooksDAO.addBook(bookName, categoryId, renterId);
 	}
 
 	public void updateBook(int bookId, String bookName) {
@@ -27,29 +30,25 @@ public class Controller {
 		BooksDAO.deleteBook(bookId);
 	}
 
-	public void getUser() {
-		// TODO Auto-generated method stub
-		
+	public void getUser(int userId) {
+		EndView.userView(UserDAO.getUser(userId));
 	}
 
 	public void getAllUser() {
-		// TODO Auto-generated method stub
-		
+		EndView.allUserView(UserDAO.getAllUser());
 	}
 
-	public void addUser() {
-		// TODO Auto-generated method stub
-		
+	public void addUser(int id, String name, String address) {
+		UserDAO.addUser(id, name, address);
 	}
 
-	public void updateUser() {
-		// TODO Auto-generated method stub
-		
+	public void updateUser(int id, String name, String add) {
+		UserDAO.updateUserName(id, name);
+		UserDAO.updateUserAddress(id, add);
 	}
 
-	public void deleteUser() {
-		// TODO Auto-generated method stub
-		
+	public void deleteUser(int id) {
+		UserDAO.deleteUser(id);
 	}
 
 	public void getLibrarian() {
@@ -77,19 +76,16 @@ public class Controller {
 		
 	}
 
-	public void getMainCategory() {
-		// TODO Auto-generated method stub
-		
+	public void getMainCategory(int id) {
+		EndView.categoryView(MainCategoryDAO.getCategory(id));
 	}
 
 	public void getAllMainCategory() {
-		// TODO Auto-generated method stub
-		
+		EndView.allCategoryView(MainCategoryDAO.getAllCategory());
 	}
 
-	public void updateMainCategory() {
-		// TODO Auto-generated method stub
-		
+	public void updateMainCategory(int id, int librarianId) {
+		MainCategoryDAO.updateCategoryLibrarianId(id, librarianId);
 	}
 
 	public void rentBook() {

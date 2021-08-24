@@ -2,12 +2,7 @@ package model.dto;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-<<<<<<< Updated upstream
 
-@Entity
-public class MainCategoryDTO {
-	@Id
-=======
 import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -30,14 +25,10 @@ import lombok.ToString;
 public class MainCategoryDTO {
 	@Id
 //	@OneToMany
->>>>>>> Stashed changes
 	private int mainCategoryId;
 	private String mainCategoryName;
-<<<<<<< Updated upstream
-=======
 	
 //	@OneToOne
 //	@JoinColumn(name = "librarianId")
->>>>>>> Stashed changes
 	private int librarianId;
 }

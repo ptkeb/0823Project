@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
+import org.junit.jupiter.api.Test;
+
 import model.dto.BooksDTO;
 import model.dto.UserDTO;
 import model.util.Util;
@@ -45,6 +47,30 @@ public class BooksDAO {
 		em.persist(book);
 		
 		System.out.println("하하");
+		
+		tx.commit();
+		
+		System.out.println("대여완료");
+	}
+	
+	@Test
+	void test() {
+		EntityManager em = Util.getEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		
+		tx.begin();
+		
+		UserDTO user = em.find(UserDTO.class, 1);
+		System.out.println("하하");
+		System.out.println(user);
+		BooksDTO book = em.find(BooksDTO.class, 1);
+		System.out.println(book);
+		
+////		user.getBooks().add(book);
+//		
+////		em.persist(user);
+		em.persist(book);
+		
 		
 		tx.commit();
 		
