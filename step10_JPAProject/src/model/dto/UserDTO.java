@@ -22,6 +22,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
+
 @NamedQuery(name = "user.findById", query = "select u from UserDTO u where u.userId = :userId ")
 @NamedQuery(name = "user.findAllById", query = "select u from UserDTO u")
 @SequenceGenerator(name="member_seq_gen", sequenceName="member_seq_id", initialValue=1, allocationSize=50)
