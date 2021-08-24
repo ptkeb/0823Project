@@ -32,11 +32,10 @@ public class UserDTO {
 	
 	private int userId;
 	
-	
 	private String userName;
 	
-	
 	private String userAddress;
-	@OneToMany(mappedBy="userId")
+	
+	@OneToMany(mappedBy="renterId")
 	List<BooksDTO> books;
 }
