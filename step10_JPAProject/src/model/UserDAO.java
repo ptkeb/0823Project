@@ -33,6 +33,7 @@ public class UserDAO {
 		tx.begin();
 		UserDTO user = em.find(UserDTO.class, id);
 		em.remove(user);
+		em.flush();
 		tx.commit();
 	}
 	
@@ -66,11 +67,11 @@ public class UserDAO {
 	public static void main (String[] args) {
 		EntityManager em = Util.getEntityManager();
 		
-		AddUser(1,"�솉湲몃룞", "�꽌�슱");
+		AddUser(1,"홍길동", "서울");
 		System.out.println(FindUser(1));
 		System.out.println(FindAllUser());
-		UpdateUserAddress(2, "�슱由됰룄");
-		UpdateUserName(2, "源��뵪");
+		UpdateUserAddress(2, "울릉도");
+		UpdateUserName(2, "김씨");
 		System.out.println(FindUser(2));
 		DeleteUser(1);
 		System.out.println(FindAllUser());

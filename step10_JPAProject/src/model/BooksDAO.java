@@ -13,14 +13,14 @@ import model.dto.BooksDTO;
 import model.util.Util;
 
 public class BooksDAO {
-	 /*1. Ã¥ Á¶È¸ & ¸ðµçÃ¥ Á¶È¸
-	 * 2. Ã¥ Ãß°¡
-	 * 3. Ã¥ Á¤º¸º¯°æ
-	 * 4. Ã¥ »èÁ¦
+	 /*1. ì±… ì¡°íšŒ & ëª¨ë“ ì±… ì¡°íšŒ
+	 * 2. ì±… ì¶”ê°€
+	 * 3. ì±… ì •ë³´ë³€ê²½
+	 * 4. ì±… ì‚­ì œ
 	 */
 	private static Properties sql = Util.getSql();
 	
-	//Ã¥ Ãß°¡
+	//ì±… ì¶”ê°€
 	public static void addBook(String bookName, int categoryId, int renterId) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();

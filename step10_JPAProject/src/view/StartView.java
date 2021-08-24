@@ -4,77 +4,77 @@ import controller.Controller;
 
 public class StartView {
 	/*
-	 * 1. Ã¥ Á¶È¸ & ¸ğµçÃ¥ Á¶È¸
-	 * 2. Ã¥ Ãß°¡
-	 * 3. Ã¥ Á¤º¸º¯°æ
-	 * 4. Ã¥ »èÁ¦
-	 * 5. ÀÌ¿ëÀÚ Á¶È¸ & ¸ğµç ÀÌ¿ëÀÚ Á¶È¸
-	 * 6. ÀÌ¿ëÀÚ Ãß°¡
-	 * 7. ÀÌ¿ëÀÚ Á¤º¸ º¯°æ
-	 * 8. ÀÌ¿ëÀÚ »èÁ¦
-	 * 9. »ç¼­ Á¶È¸ & ¸ğµç »ç¼­ Á¶È¸
-	 * 10. »ç¼­ Ãß°¡
-	 * 11. »ç¼­ Á¤º¸ º¯°æ
-	 * 12. »ç¼­ »èÁ¦
-	 * 13. ºĞ·ù Á¶È¸ & ¸ğµç ºĞ·ù Á¶È¸
-	 * 14. ºĞ·ù Á¤º¸ º¯°æ (´ã´ç»ç¼­¸¸)
-	 * 15. Ã¥ ´ëÃâ
-	 * 16. Ã¥ ¹İ³³
-	 * 17. ÀÌ¿ëÀÚ ¿¬Ã¼ÀÏ¼ö¹× ÇØ´ç Ã¥ È®ÀÎ
+	 * 1. ì±… ì¡°íšŒ & ëª¨ë“ ì±… ì¡°íšŒ
+	 * 2. ì±… ì¶”ê°€
+	 * 3. ì±… ì •ë³´ë³€ê²½
+	 * 4. ì±… ì‚­ì œ
+	 * 5. ì´ìš©ì ì¡°íšŒ & ëª¨ë“  ì´ìš©ì ì¡°íšŒ
+	 * 6. ì´ìš©ì ì¶”ê°€
+	 * 7. ì´ìš©ì ì •ë³´ ë³€ê²½
+	 * 8. ì´ìš©ì ì‚­ì œ
+	 * 9. ì‚¬ì„œ ì¡°íšŒ & ëª¨ë“  ì‚¬ì„œ ì¡°íšŒ
+	 * 10. ì‚¬ì„œ ì¶”ê°€
+	 * 11. ì‚¬ì„œ ì •ë³´ ë³€ê²½
+	 * 12. ì‚¬ì„œ ì‚­ì œ
+	 * 13. ë¶„ë¥˜ ì¡°íšŒ & ëª¨ë“  ë¶„ë¥˜ ì¡°íšŒ
+	 * 14. ë¶„ë¥˜ ì •ë³´ ë³€ê²½ (ë‹´ë‹¹ì‚¬ì„œë§Œ)
+	 * 15. ì±… ëŒ€ì¶œ
+	 * 16. ì±… ë°˜ë‚©
+	 * 17. ì´ìš©ì ì—°ì²´ì¼ìˆ˜ë° í•´ë‹¹ ì±… í™•ì¸
 	 */
 	
 	public static void main (String[] args) {
 		Controller controller = Controller.getInstance();
 		
-		//¿Ï·á
-		System.out.println("2. Ã¥ Ãß°¡");
-		controller.addBook("Ã¥ÀÌ¸§1", 22, 33);
-		controller.addBook("Ã¥ÀÌ¸§2", 33, 44);
-		controller.addBook("Ã¥ÀÌ¸§3", 44, 55);
+		//ì™„ë£Œ
+		System.out.println("2. ì±… ì¶”ê°€");
+		controller.addBook("ì±…ì´ë¦„1", 22, 33);
+		controller.addBook("ì±…ì´ë¦„2", 33, 44);
+		controller.addBook("ì±…ì´ë¦„3", 44, 55);
 		
-		System.out.println("1. Ã¥ Á¶È¸  & ¸ğµç Ã¥ Á¶È¸");
+		System.out.println("1. ì±… ì¡°íšŒ  & ëª¨ë“  ì±… ì¡°íšŒ");
 		controller.getBook(1);
 		controller.getallBooks();
 		
-		//Ã¥ÀÇ ¾î¶² Á¤º¸¸¦ º¯°æÇÒ Áö? - ¿ì¼± Ã¥ÀÌ¸§ º¯°æÀ¸·Î ±¸Çö
-		System.out.println("3. Ã¥ Á¤º¸º¯°æ");
-		controller.updateBook(1, "º¯°æµÈ Ã¥ÀÌ¸§");
-		System.out.println("º¯°æµÈ Ã¥ Á¤º¸ Ãâ·Â");
+		//ì±…ì˜ ì–´ë–¤ ì •ë³´ë¥¼ ë³€ê²½í•  ì§€? - ìš°ì„  ì±…ì´ë¦„ ë³€ê²½ìœ¼ë¡œ êµ¬í˜„
+		System.out.println("3. ì±… ì •ë³´ë³€ê²½");
+		controller.updateBook(1, "ë³€ê²½ëœ ì±…ì´ë¦„");
+		System.out.println("ë³€ê²½ëœ ì±… ì •ë³´ ì¶œë ¥");
 		controller.getBook(1);
 		
-		System.out.println("4. Ã¥ »èÁ¦");
+		System.out.println("4. ì±… ì‚­ì œ");
 		controller.deleteBook(2);
 		controller.getallBooks();
 //		
-//		System.out.println("5. ÀÌ¿ëÀÚ Á¶È¸ & ¸ğµç ÀÌ¿ëÀÚ Á¶È¸");
+//		System.out.println("5. ì´ìš©ì ì¡°íšŒ & ëª¨ë“  ì´ìš©ì ì¡°íšŒ");
 //		controller.getUser();
 //		controller.getAllUser();
-//		System.out.println("6. ÀÌ¿ëÀÚ Ãß°¡");
+//		System.out.println("6. ì´ìš©ì ì¶”ê°€");
 //		controller.addUser();
-//		System.out.println("7. ÀÌ¿ëÀÚ Á¤º¸ º¯°æ");
+//		System.out.println("7. ì´ìš©ì ì •ë³´ ë³€ê²½");
 //		controller.updateUser();
-//		System.out.println("8. ÀÌ¿ëÀÚ »èÁ¦");
+//		System.out.println("8. ì´ìš©ì ì‚­ì œ");
 //		controller.deleteUser();
 //		
-//		System.out.println("9. »ç¼­ Á¶È¸ & ¸ğµç »ç¼­ Á¶È¸");
+//		System.out.println("9. ì‚¬ì„œ ì¡°íšŒ & ëª¨ë“  ì‚¬ì„œ ì¡°íšŒ");
 //		controller.getLibrarian();
 //		controller.getAllLibrarian();
-//		System.out.println("10. »ç¼­ Ãß°¡");
+//		System.out.println("10. ì‚¬ì„œ ì¶”ê°€");
 //		controller.addLibrarian();
-//		System.out.println("11. »ç¼­ Á¤º¸ º¯°æ");
+//		System.out.println("11. ì‚¬ì„œ ì •ë³´ ë³€ê²½");
 //		controller.updateLibrarian();
-//		System.out.println("12. »ç¼­ »èÁ¦");
+//		System.out.println("12. ì‚¬ì„œ ì‚­ì œ");
 //		controller.deleteLibrarian();
 //		
-//		System.out.println("13. ºĞ·ù Á¶È¸ & ¸ğµç ºĞ·ù Á¶È¸");
+//		System.out.println("13. ë¶„ë¥˜ ì¡°íšŒ & ëª¨ë“  ë¶„ë¥˜ ì¡°íšŒ");
 //		controller.getMainCategory();
 //		controller.getAllMainCategory();
-//		System.out.println("14. ºĞ·ù Á¤º¸ º¯°æ (´ã´ç»ç¼­¸¸)");
+//		System.out.println("14. ë¶„ë¥˜ ì •ë³´ ë³€ê²½ (ë‹´ë‹¹ì‚¬ì„œë§Œ)");
 //		controller.updateMainCategory();
 //		
-//		System.out.println("15. Ã¥ ´ëÃâ");
+//		System.out.println("15. ì±… ëŒ€ì¶œ");
 //		controller.rentBook();
-//		System.out.println("16. Ã¥ ¹İ³³");
+//		System.out.println("16. ì±… ë°˜ë‚©");
 //		controller.returnBook();
 	}
 }
