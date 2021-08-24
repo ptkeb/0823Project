@@ -56,15 +56,22 @@ public class StartView {
 //		System.out.println("8. 이용자 삭제");
 //		controller.deleteUser();
 //		
-//		System.out.println("9. 사서 조회 & 모든 사서 조회");
-//		controller.getLibrarian();
-//		controller.getAllLibrarian();
-//		System.out.println("10. 사서 추가");
-//		controller.addLibrarian();
-//		System.out.println("11. 사서 정보 변경");
-//		controller.updateLibrarian();
-//		System.out.println("12. 사서 삭제");
-//		controller.deleteLibrarian();
+		System.out.println("9. 사서 조회 & 모든 사서 조회");
+		controller.getLibrarian(1);
+		controller.getAllLibrarian();
+		
+		System.out.println("10. 사서 추가");
+		controller.addLibrarian(1, "김사서", "수요일");
+		controller.addLibrarian(2, "박사서", "목요일");
+		controller.addLibrarian(3, "홍사서", "금요일");
+		controller.addLibrarian(4, "최사서", "화요일");
+		controller.addLibrarian(5, "우사서", "월요일");
+		
+		System.out.println("11. 사서 정보 변경");
+		controller.updateLibrarian(3, "서사서", "월요일");
+		
+		System.out.println("12. 사서 삭제");
+		controller.deleteLibrarian(4);
 //		
 //		System.out.println("13. 분류 조회 & 모든 분류 조회");
 //		controller.getMainCategory();

@@ -1,6 +1,7 @@
 package controller;
 
 import model.BooksDAO;
+import model.LibrarianDAO;
 import view.EndView;
 
 public class Controller {
@@ -52,28 +53,28 @@ public class Controller {
 		
 	}
 
-	public void getLibrarian() {
-		// TODO Auto-generated method stub
+	public void getLibrarian(int id) {
+		EndView.LibrarianView(LibrarianDAO.getLibrarian(1));
 		
 	}
 
 	public void getAllLibrarian() {
-		// TODO Auto-generated method stub
+		EndView.AllLibrarianView(LibrarianDAO.getAllLibrarian());
 		
 	}
 
-	public void addLibrarian() {
-		// TODO Auto-generated method stub
+	public void addLibrarian(int id, String name, String offday) {
+		LibrarianDAO.addLibrarian(id, name, offday);
 		
 	}
 
-	public void updateLibrarian() {
-		// TODO Auto-generated method stub
+	public void updateLibrarian(int librarianId, String librarianName, String offDay) {
+		LibrarianDAO.updateLibrarian(librarianId, librarianName, offDay);
 		
 	}
 
-	public void deleteLibrarian() {
-		// TODO Auto-generated method stub
+	public void deleteLibrarian(int librarianId) {
+		LibrarianDAO.deleteLibrarian(librarianId);
 		
 	}
 

@@ -25,7 +25,7 @@ public class LibrarianDAO {
 	
 	    
 	
-	//9. librarianId가 1 인 사서 조회 
+	//9. 사서 조회 
 //	@Test
 	public static void getLibrarian(int id) {
 		EntityManager em = Util.getEntityManager();
@@ -67,7 +67,7 @@ public class LibrarianDAO {
 	
 	
 	
-	//11. librarianId가 2 인 사서 정보 변경
+	//11. 사서 정보 변경
 //	@Test
 	public static void updateLibrarian(int librarianId, String librarianName, String offDay) {
 		EntityManager em = Util.getEntityManager();
