@@ -1,35 +1,30 @@
 package controller;
 
+import model.BooksDAO;
+import view.EndView;
+
 public class Controller {
 	private static Controller instance = new Controller();
-	
-	public static Controller getInstance() {
-		return instance;
-	}
+	public static Controller getInstance() { return instance; }
 
-	public void getBook() {
-		// TODO Auto-generated method stub
-		
+	public void getBook(int bookId) {
+		EndView.bookView(BooksDAO.getBook(bookId));
 	}
 
 	public void getallBooks() {
-		// TODO Auto-generated method stub
-		
+		EndView.AllBooksView(BooksDAO.getAllBook());
 	}
 
-	public void addBook() {
-		// TODO Auto-generated method stub
-		
+	public void addBook(String bookName, int categoryId, int renterId) {
+		BooksDAO.addBook(bookName, categoryId, renterId);
 	}
 
-	public void updateBook() {
-		// TODO Auto-generated method stub
-		
+	public void updateBook(int bookId, String bookName) {
+		BooksDAO.updateBook(bookId, bookName);
 	}
 
-	public void deleteBook() {
-		// TODO Auto-generated method stub
-		
+	public void deleteBook(int bookId) {
+		BooksDAO.deleteBook(bookId);
 	}
 
 	public void getUser() {
