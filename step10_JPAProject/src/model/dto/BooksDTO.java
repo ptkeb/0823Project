@@ -41,6 +41,6 @@ public class BooksDTO {
 	private int categoryId;
 	
 	@ManyToOne
-	@JoinColumn(name="userId")
+	@JoinColumn(name="user_id")
 	private int renterId;
 }
