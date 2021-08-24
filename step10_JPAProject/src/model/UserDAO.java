@@ -13,21 +13,21 @@ import model.util.Util;
 
 public class UserDAO {
 
-	public static UserDTO FindUser(int id) {
+	public static UserDTO getUser(int id) {
 		EntityManager em = Util.getEntityManager();
 		UserDTO user = em.createNamedQuery("user.findById",UserDTO.class)
 							.setParameter("userId", id).getSingleResult();
 		return user;
 	}
 	
-	public static List<UserDTO> FindAllUser() {
+	public static List<UserDTO> getAllUser() {
 		EntityManager em = Util.getEntityManager();
 		List<UserDTO> user = em.createNamedQuery("user.findAllById",UserDTO.class)
 							.getResultList();
 		return user;
 	}
 	
-	public static void DeleteUser(int id) {
+	public static void deleteUser(int id) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
@@ -37,7 +37,7 @@ public class UserDAO {
 		tx.commit();
 	}
 	
-	public static void UpdateUserAddress(int id, String add) {
+	public static void updateUserAddress(int id, String add) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
@@ -46,7 +46,7 @@ public class UserDAO {
 		tx.commit();
 	}
 	
-	public static void UpdateUserName(int id, String name) {
+	public static void updateUserName(int id, String name) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
@@ -55,7 +55,7 @@ public class UserDAO {
 		tx.commit();
 	}
 	
-	public static void AddUser(int id, String name, String address) {
+	public static void addUser(int id, String name, String address) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		UserDTO user = new UserDTO(id,name,address, null);
@@ -67,14 +67,14 @@ public class UserDAO {
 	public static void main (String[] args) {
 		EntityManager em = Util.getEntityManager();
 		
-		AddUser(1,"홍길동", "서울");
-		System.out.println(FindUser(1));
-		System.out.println(FindAllUser());
-		UpdateUserAddress(2, "울릉도");
-		UpdateUserName(2, "김씨");
-		System.out.println(FindUser(2));
-		DeleteUser(1);
-		System.out.println(FindAllUser());
+		addUser(1,"홍길동", "서울");
+		System.out.println(getUser(1));
+		System.out.println(getAllUser());
+		updateUserAddress(2, "울릉도");
+		updateUserName(2, "김씨");
+		System.out.println(getUser(2));
+		deleteUser(1);
+		System.out.println(getAllUser());
 		
 		
 
