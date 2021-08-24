@@ -2,6 +2,13 @@ package model.dto;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+<<<<<<< Updated upstream
+
+@Entity
+public class MainCategoryDTO {
+	@Id
+=======
+import javax.persistence.JoinColumn;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -17,16 +24,20 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 
-@Entity
-@NamedQuery(name = "category.findById", query = "select c from MainCategoryDTO c where c.mainCategoryId = :mainCategoryId ")
-@NamedQuery(name = "category.findAllById", query = "select c from MainCategoryDTO c")
+@Entity(name = "MainCategory")
+@NamedQuery(name = "category.findById", query = "select c from MainCategory c where c.mainCategoryId = :mainCategoryId ")
+@NamedQuery(name = "category.findAllById", query = "select c from MainCategory c")
 public class MainCategoryDTO {
 	@Id
-	@OneToMany
+//	@OneToMany
+>>>>>>> Stashed changes
 	private int mainCategoryId;
-	
 	private String mainCategoryName;
+<<<<<<< Updated upstream
+=======
 	
-	@OneToOne
+//	@OneToOne
+//	@JoinColumn(name = "librarianId")
+>>>>>>> Stashed changes
 	private int librarianId;
 }

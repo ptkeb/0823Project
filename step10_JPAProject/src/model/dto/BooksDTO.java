@@ -31,16 +31,18 @@ import lombok.ToString;
 public class BooksDTO {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="book_seq_gen")
-	@Column(name="book_id")
+	@Column(name="bookid")
 	private int bookId;
 	
-	@Column(name="book_name")
+	@Column(name="bookname")
 	private String bookName;
 	
-	@Column(name="category_id")
+//	@ManyToOne
+//	@JoinColumn(name = "mainCategoryId")
+	@Column(name="categoryId")
 	private int categoryId;
 	
 	@ManyToOne
-	@JoinColumn(name="user_id")
-	private int renterId;
+	@JoinColumn(name="userId")
+	private UserDTO renterId;
 }

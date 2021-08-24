@@ -1,20 +1,17 @@
 package model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
-import java.util.Properties;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 import model.dto.BooksDTO;
+import model.dto.UserDTO;
 import model.util.Util;
 
 public class BooksDAO {
 	//책 추가
-	public static void addBook(String bookName, int categoryId, int renterId) {
+	public static void addBook(String bookName, int categoryId) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		
@@ -23,12 +20,37 @@ public class BooksDAO {
 		BooksDTO book = new BooksDTO();
 		book.setBookName(bookName);
 		book.setCategoryId(categoryId);
-		book.setRenterId(renterId);
+		book.setRenterId(null); //null 들어가나?
 		
 		em.persist(book);
 		
 		tx.commit();
 	}
+	
+	//대여 -> 서비스에 추가?
+	public static void rentBook(int bookId, int userId) {
+		EntityManager em = Util.getEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		
+		tx.begin();
+		
+		UserDTO user = em.find(UserDTO.class, userId);
+		System.out.println(user);
+		BooksDTO book = em.find(BooksDTO.class, bookId);
+		System.out.println(book);
+		
+////		user.getBooks().add(book);
+//		
+////		em.persist(user);
+		em.persist(book);
+		
+		System.out.println("하하");
+		
+		tx.commit();
+		
+		System.out.println("대여완료");
+	}
+	
 	
 	public static BooksDTO getBook(int bookId) {
 		EntityManager em = Util.getEntityManager();
@@ -72,7 +94,6 @@ public class BooksDAO {
 		
 		BooksDTO book = em.find(BooksDTO.class, bookId);
 		em.remove(book);
-		em.flush();
 		tx.commit();
 	}
 }

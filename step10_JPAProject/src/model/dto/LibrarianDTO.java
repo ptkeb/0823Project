@@ -1,8 +1,10 @@
 package model.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,6 +22,7 @@ import lombok.ToString;
 public class LibrarianDTO {
 	
 	@Id
+	@Column(name = "librarianId")
 	private int librarianId;
 	
 	private String librarianName;
