@@ -13,13 +13,6 @@ import model.dto.BooksDTO;
 import model.util.Util;
 
 public class BooksDAO {
-	 /*1. 책 조회 & 모든책 조회
-	 * 2. 책 추가
-	 * 3. 책 정보변경
-	 * 4. 책 삭제
-	 */
-	private static Properties sql = Util.getSql();
-	
 	//책 추가
 	public static void addBook(String bookName, int categoryId, int renterId) {
 		EntityManager em = Util.getEntityManager();
