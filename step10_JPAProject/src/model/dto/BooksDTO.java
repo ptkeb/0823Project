@@ -1,4 +1,4 @@
- package model.dto;
+package model.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,7 +25,7 @@ import lombok.ToString;
 @NamedQuery(query = "select b from BOOKS b", name = "BOOKS.findAllBooks")
 
 @Entity(name = "BOOKS")
-@SequenceGenerator(name="book_seq_gen", sequenceName="book_seq_id", initialValue=1, allocationSize=1)
+@SequenceGenerator(name="book_seq_gen", sequenceName="book_seq_id", initialValue=100, allocationSize=1)
 public class BooksDTO {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="book_seq_gen")
@@ -35,8 +35,6 @@ public class BooksDTO {
 	@Column(name="bookname")
 	private String bookName;
 	
-//	@ManyToOne
-//	@JoinColumn(name = "mainCategoryId")
 	@Column(name="categoryId")
 	private String categoryId;
 	
@@ -49,5 +47,4 @@ public class BooksDTO {
 		return "BooksDTO [bookId=" + bookId + ", bookName=" 
 				+ bookName + ", categoryId=" + categoryId + " 대여자 : " + renterId.getUserId() + "]";
 	}
-	
 }

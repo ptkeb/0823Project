@@ -1,14 +1,15 @@
 package model;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
+import java.util.Properties;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import org.junit.jupiter.api.Test;
-
 import model.dto.BooksDTO;
-import model.dto.UserDTO;
 import model.util.Util;
 
 public class BooksDAO {
@@ -28,55 +29,13 @@ public class BooksDAO {
 		
 		tx.commit();
 	}
-	
-	//대여 -> 서비스에 추가?
-	public static void rentBook(int bookId, int userId) {
-		EntityManager em = Util.getEntityManager();
-		EntityTransaction tx = em.getTransaction();
-		
-		tx.begin();
-		
-		UserDTO user = em.find(UserDTO.class, userId);
-		BooksDTO book = em.find(BooksDTO.class, bookId);
 
-		book.setRenterId(user);
-		
-		em.persist(user);
-		em.persist(book);
-		
-		tx.commit();
-	}
-	
-//	@Test
-//	void test() {
-//		EntityManager em = Util.getEntityManager();
-//		EntityTransaction tx = em.getTransaction();
-//		
-//		tx.begin();
-//		
-//		UserDTO user = em.find(UserDTO.class, 1);
-//		System.out.println(user);
-//		BooksDTO book = em.find(BooksDTO.class, 1);
-//		
-//		user.getBooks().add(book);
-//		
-//		em.persist(user);
-//		em.persist(book);
-//		
-//		System.out.println(book);
-//		
-//		
-//		tx.commit();
-//		
-//		System.out.println("대여완료");
-//	}
-	
 	
 	public static BooksDTO getBook(int bookId) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		
-		List<BooksDTO> findBook = em.createNamedQuery("BOOKS.findByBookId").setParameter("bookId", bookId).getResultList();
+		List<BooksDTO> findBook = em.createNamedQuery("Books.findByBookId").setParameter("bookId", bookId).getResultList();
 		
 		BooksDTO findBookResult = findBook.get(0);
 		
@@ -87,7 +46,7 @@ public class BooksDAO {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		
-		List<BooksDTO> findBook = em.createNamedQuery("BOOKS.findAllBooks").getResultList();
+		List<BooksDTO> findBook = em.createNamedQuery("Books.findAllBooks").getResultList();
 		
 		return findBook;
 	}
@@ -114,6 +73,7 @@ public class BooksDAO {
 		
 		BooksDTO book = em.find(BooksDTO.class, bookId);
 		em.remove(book);
+		em.flush();
 		tx.commit();
 	}
 }

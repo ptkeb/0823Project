@@ -11,7 +11,7 @@ import model.util.Util;
 
 public class MainCategoryDAO {
 
-	public static MainCategoryDTO getCategory(int id) {
+	public static MainCategoryDTO getCategory(String id) {
 		EntityManager em = Util.getEntityManager();
 		MainCategoryDTO category = em.createNamedQuery("category.findById",MainCategoryDTO.class)
 							.setParameter("mainCategoryId", id).getSingleResult();
@@ -25,7 +25,7 @@ public class MainCategoryDAO {
 		return category;
 	}
 	
-	public static void updateCategoryLibrarianId(int id, int librarianId) {
+	public static void updateCategoryLibrarianId(String id, int librarianId) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
@@ -33,5 +33,4 @@ public class MainCategoryDAO {
 		category.setLibrarianId(librarianId);
 		tx.commit();
 	}
-	
 }
