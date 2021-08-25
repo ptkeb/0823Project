@@ -20,7 +20,6 @@ import lombok.ToString;
 @ToString
 @Entity(name = "LIBRARIAN")
 public class LibrarianDTO {
-	
 	@Id
 	@Column(name = "librarianId")
 	private int librarianId;

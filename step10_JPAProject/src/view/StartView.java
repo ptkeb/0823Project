@@ -57,7 +57,7 @@ public class StartView {
 //		controller.getallBooks();
 //		
 //		System.out.println("5. 이용자 조회 & 모든 이용자 조회");
-//		controller.getUser(21);
+//		controller.getUser(45645);
 //		controller.getAllUser();
 //		
 //		System.out.println("6. 이용자 추가");
@@ -65,8 +65,9 @@ public class StartView {
 //		controller.getUser(7);
 //		
 //		System.out.println("7. 이용자 정보 변경");
-//		controller.updateUserAddress(1,"미국");
-//		controller.updateUserName(1,"장씨");
+//		controller.updateUserName(34525,"장씨");
+//		controller.updateUserAddress(34525,"미국");
+		
 //		controller.getUser(24);
 //		
 //		System.out.println("8. 이용자 삭제");
@@ -82,10 +83,16 @@ public class StartView {
 //		controller.addLibrarian(7, "박사서", "목요일");
 //		
 //		System.out.println("11. 사서 정보 변경");
-		controller.updateLibrarian(99, "서사서", "월요일");
+//		controller.updateLibrarianOffDay(9,"월");
+//		controller.updateLibrarianName(3,"나사서");
+//		controller.updateLibrarian(3, "서사서", "월요일");
 //		
 //		System.out.println("12. 사서 삭제");
 //		controller.deleteLibrarian(1);
+//		controller.deleteLibrarian(2);
+//		controller.deleteLibrarian(3);
+//		controller.deleteLibrarian(4);
+//		controller.deleteLibrarian(5);
 //		
 //		System.out.println("13. 분류 조회 & 모든 분류 조회");
 //		controller.getMainCategory("100");
@@ -94,20 +101,19 @@ public class StartView {
 //		System.out.println("14. 분류 정보 변경 (담당사서만)");
 //		controller.updateMainCategory("100", 1);
 //		controller.getMainCategory("200");
-//		
 //		System.out.println("15. 책 대출");
-//		controller.rentBook(30,23);
+//		controller.rentBook(26,30);
 		
 		
 //		System.out.println("16. 책 반납");
-//		controller.returnBook(30,23);
+//		controller.returnBook(26, 21); //책이름 잘못됐거나 사용자 번호 잘못됐을때 에러 발생 -> 처리 완료
 //		controller.getBook(30);
 //		System.out.println("17. 모든 책 반납");
 //		controller.getUser(22);
 //		controller.rentBook(21, 22);
 //		controller.rentBook(22, 22);
 //		controller.rentBook(23, 22);
-//		controller.returnAllBook(22);
+		controller.returnAllBook(21);
 //		controller.getUser(22);
 	}
 }

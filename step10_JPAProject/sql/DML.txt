@@ -1,9 +1,9 @@
 --LIBRARIAN DML
-INSERT INTO LIBRARIAN VALUES(1, '±è»ç¼­', '¼ö¿äÀÏ');
-INSERT INTO LIBRARIAN VALUES(2, '¹Ú»ç¼­', '¸ñ¿äÀÏ');
-INSERT INTO LIBRARIAN VALUES(3, 'È«»ç¼­', '±Ý¿äÀÏ');
-INSERT INTO LIBRARIAN VALUES(4, 'ÃÖ»ç¼­', 'È­¿äÀÏ');
-INSERT INTO LIBRARIAN VALUES(5, '¿ì»ç¼­', '¿ù¿äÀÏ');
+INSERT INTO LIBRARIAN VALUES(1, 'ê¹€ì‚¬ì„œ', 'ìˆ˜ìš”ì¼');
+INSERT INTO LIBRARIAN VALUES(2, 'ë°•ì‚¬ì„œ', 'ëª©ìš”ì¼');
+INSERT INTO LIBRARIAN VALUES(3, 'í™ì‚¬ì„œ', 'ê¸ˆìš”ì¼');
+INSERT INTO LIBRARIAN VALUES(4, 'ìµœì‚¬ì„œ', 'í™”ìš”ì¼');
+INSERT INTO LIBRARIAN VALUES(5, 'ìš°ì‚¬ì„œ', 'ì›”ìš”ì¼');
 
 --MAINCATEGORY DML
 INSERT INTO MAINCATEGORY VALUES('000','a', 1);
@@ -18,27 +18,28 @@ INSERT INTO MAINCATEGORY VALUES('800','i', 3);
 INSERT INTO MAINCATEGORY VALUES('900','j', 1);
 
 --LIBUSER DML
-INSERT INTO LIBUSER VALUES(userId_seq.nextval, '±Ç´ë¾È' , '¼­¿ï');
-INSERT INTO LIBUSER VALUES(userId_seq.nextval, '±è¾Æ¶ó' , '¼ö¿ø');
-INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'Á¤ÀºÁø' , 'ºÎ»ê');
-INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'È«±æµ¿' , '¼­¿ï');
-INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'È«±æµ¿2' , '¼ö¿ø');
-INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'È«±æµ¿3' , 'ºÎ»ê');
-INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'È«±æµ¿4' , '¼­¿ï');
-INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'È«±æµ¿5' , '¼ö¿ø');
-INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'È«±æµ¿6' , 'ºÎ»ê');
-INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'È«±æµ¿7' , '¼­¿ï');
+
+INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'ê¶ŒëŒ€ì•ˆ' , 'ì„œìš¸');
+INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'ê¹€ì•„ë¼' , 'ìˆ˜ì›');
+INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'ì •ì€ì§„' , 'ë¶€ì‚°');
+INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'ì‹ ì§€í˜œ' , 'ì„œìš¸');
+INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'ê°œë°œì™•' , 'ìˆ˜ì›');
+INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'ìš°ìš©' , 'ë¶€ì‚°');
+INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'ë¹™ë´‰' , 'ì„œìš¸');
+INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'í™ê¸¸ë™5' , 'ìˆ˜ì›');
+INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'í™ê¸¸ë™6' , 'ë¶€ì‚°');
+INSERT INTO LIBUSER VALUES(userId_seq.nextval, 'í™ê¸¸ë™7' , 'ì„œìš¸');
 
 --BOOKS DML
-INSERT INTO BOOKS VALUES(bookid_seq.nextval,'¾ö¸¶ ³ª´Â Ä¿¼­ Á¤ÀºÁøÀÌ µÉ·¡¿ä', '000', null);
-INSERT INTO BOOKS VALUES(bookid_seq.nextval,'¾ö¸¶ ³ª´Â Ä¿¼­ ±Ç´ë¾ÈÀÌ µÉ·¡¿ä', '100', null);
-INSERT INTO BOOKS VALUES(bookid_seq.nextval,'¾ö¸¶ ³ª´Â Ä¿¼­ ±è¾Æ¶ó°¡ µÉ·¡¿ä', '200', null);
-INSERT INTO BOOKS VALUES(bookid_seq.nextval,'¾ö¸¶ ³ª´Â Ä¿¼­ ºùºÀÀÌ µÉ·¡¿ä', '300', null);
-INSERT INTO BOOKS VALUES(bookid_seq.nextval,'¾ö¸¶ ³ª´Â Ä¿¼­ ·¹¸ó±×·¦ÀÌ µÉ·¡¿ä', '400', null);
-INSERT INTO BOOKS VALUES(bookid_seq.nextval,'¾ö¸¶ ³ª´Â Ä¿¼­ ±èÇý°æÀÌ µÉ·¡¿ä', '500', null);
-INSERT INTO BOOKS VALUES(bookid_seq.nextval,'¾ö¸¶ ³ª´Â Ä¿¼­ °³¹ßÀÚ°¡ ¾È µÉ·¡¿ä', '600', null);
-INSERT INTO BOOKS VALUES(bookid_seq.nextval,'¾ö¸¶ ³ª´Â Ä¿¼­ ¹é¼ö°¡ µÉ·¡¿ä', '700', null);
-INSERT INTO BOOKS VALUES(bookid_seq.nextval,'¾ö¸¶ ³ª´Â Ä¿¼­ ºÎÀÚ°¡ µÉ·¡¿ä', '800', null);
-INSERT INTO BOOKS VALUES(bookid_seq.nextval,'¾ö¸¶ ³ª´Â Ä¿¼­ ¹¹°¡ µÉ¶õ°¡..', '900', null);
+INSERT INTO BOOKS VALUES(bookid_seq.nextval,'ì—„ë§ˆ ë‚˜ëŠ” ì»¤ì„œ ì •ì€ì§„ì´ ë ëž˜ìš”', '000', null);
+INSERT INTO BOOKS VALUES(bookid_seq.nextval,'ì—„ë§ˆ ë‚˜ëŠ” ì»¤ì„œ ê¶ŒëŒ€ì•ˆì´ ë ëž˜ìš”', '100', null);
+INSERT INTO BOOKS VALUES(bookid_seq.nextval,'ì—„ë§ˆ ë‚˜ëŠ” ì»¤ì„œ ê¹€ì•„ë¼ê°€ ë ëž˜ìš”', '200', null);
+INSERT INTO BOOKS VALUES(bookid_seq.nextval,'ì—„ë§ˆ ë‚˜ëŠ” ì»¤ì„œ ì‹ ì§€í˜œê°€ ë ëž˜ìš”', '300', null);
+INSERT INTO BOOKS VALUES(bookid_seq.nextval,'ì—„ë§ˆ ë‚˜ëŠ” ì»¤ì„œ ë ˆëª¬ê·¸ëž©ì´ ë ëž˜ìš”', '400', null);
+INSERT INTO BOOKS VALUES(bookid_seq.nextval,'ì—„ë§ˆ ë‚˜ëŠ” ì»¤ì„œ ê¹€í˜œê²½(ê°•ì‚¬ë‹˜)ì´ ë ëž˜ìš”', '500', null);
+INSERT INTO BOOKS VALUES(bookid_seq.nextval,'ì—„ë§ˆ ë‚˜ëŠ” ì»¤ì„œ ê°œë°œìžê°€ ì•ˆ ë ëž˜ìš”', '600', null);
+INSERT INTO BOOKS VALUES(bookid_seq.nextval,'ì—„ë§ˆ ë‚˜ëŠ” ì»¤ì„œ ë°±ìˆ˜ê°€ ë ëž˜ìš”', '700', null);
+INSERT INTO BOOKS VALUES(bookid_seq.nextval,'ì—„ë§ˆ ë‚˜ëŠ” ì»¤ì„œ ë¶€ìžê°€ ë ëž˜ìš”', '800', null);
+INSERT INTO BOOKS VALUES(bookid_seq.nextval,'ì—„ë§ˆ ë‚˜ëŠ” ì»¤ì„œ ë­ê°€ ë ëž€ê°€..', '900', null);
 
 commit;

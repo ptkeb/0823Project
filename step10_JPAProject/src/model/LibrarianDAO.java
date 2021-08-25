@@ -48,7 +48,7 @@ public class LibrarianDAO {
 		tx.commit();
 	}
 
-	public static void updateLibrarian(int librarianId, String librarianName, String offDay) {
+	public static void updateLibrarianName(int librarianId, String librarianName) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		
@@ -56,6 +56,19 @@ public class LibrarianDAO {
 		
 		LibrarianDTO librarian = em.find(LibrarianDTO.class, librarianId);
 		librarian.setLibrarianName(librarianName);
+		
+		em.persist(librarian);
+		
+		tx.commit();
+	}
+	
+	public static void updateLibrarianOffDay(int librarianId, String offDay) {
+		EntityManager em = Util.getEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		
+		tx.begin();
+		
+		LibrarianDTO librarian = em.find(LibrarianDTO.class, librarianId);
 		librarian.setOffDay(offDay);
 		
 		em.persist(librarian);
