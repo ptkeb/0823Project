@@ -69,18 +69,10 @@ public class EndView {
 	public static void librarianView(LibrarianDTO librarian) {
 		System.out.println(librarian);
 	}
-	
-	public static void librarianView(LibrarianDTO librarian) {
-		System.out.println(librarian);
-		
-	}
 
 	public static void allLibrarianView(List<LibrarianDTO> allLibrarian) {
 		System.out.println(allLibrarian);
 	}
 
 
-	public static void allLibrarianView(List<LibrarianDTO> allLibrarian) {
-		System.out.println(allLibrarian);
-	}
 }
