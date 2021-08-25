@@ -1,9 +1,11 @@
 package controller;
 
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.NoResultException;
+import javax.persistence.RollbackException;
 
 import model.BooksDAO;
 import model.LibrarianDAO;
@@ -51,39 +53,65 @@ public class Controller {
 	}
 
 	public void getUser(int userId) {
+		try {
 		EndView.userView(UserDAO.getUser(userId));
+		} catch (NoResultException e) {
+			System.out.println("데이터가 없습니다.");
+		} 
 	}
 
 	public void getAllUser() {
+		try {
 		EndView.allUserView(UserDAO.getAllUser());
+		} catch (IndexOutOfBoundsException e) {
+			System.out.println("사용자가 존재하지 않습니다.");
+		} catch (NoResultException e) {
+			System.out.println("출력하려는 값이 존재하지 않습니다.");
+		}
 	}
 
 	public void addUser(String name, String address) {
-		UserDAO.addUser(name, address);
+		try	{
+			UserDAO.addUser(name, address);
+		} catch (RollbackException s) {
+			System.out.println("글자수를 초과하였습니다.");
+		}
 	}
 
-	public void updateUser(int id, String name, String add) {
-		UserDAO.updateUserName(id, name);
+	public void updateUserName(int id, String name) {
+		try {
+			UserDAO.updateUserName(id, name);			
+		} catch	(NullPointerException e){
+			System.out.println("존재하지 않는 사용자 번호입니다.");
+		}
+	}
+	
+	public void updateUserAddress(int id, String add) {
+		try {
 		UserDAO.updateUserAddress(id, add);
+		} catch	(NullPointerException e){
+			System.out.println("존재하지 않는 사용자 번호입니다.");
+		}
 	}
 
 	public void deleteUser(int id) {
-		UserDAO.deleteUser(id);
+		try {
+			UserDAO.deleteUser(id);
+		} catch (IllegalArgumentException e) {
+			System.out.println("존재하지 않는 사용자입니다.");
+		}
 	}
 
 	public void getLibrarian(int librarianId) {
 		EndView.librarianView((LibrarianDTO)LibrarianDAO.getLibrarian(librarianId));
-		
 	}
 
 	public void getAllLibrarian() {
 		EndView.allLibrarianView(LibrarianDAO.getAllLibrarian());
-		
 	}
 
 	public void addLibrarian(int id, String name, String offday) {
 		LibrarianDAO.addLibrarian(id, name, offday);
-		
 	}
 
 	public void updateLibrarian(int librarianId, String librarianName, String offDay) {
@@ -92,32 +120,61 @@ public class Controller {
 	}
 
 	public void deleteLibrarian(int librarianId) {
-		LibrarianDAO.deleteLibrarian(librarianId);
-		
+		try {
+			LibrarianDAO.deleteLibrarian(librarianId);			
+		} catch (IllegalArgumentException e) {
+			System.out.println("존재하지 않는 사서입니다.");
+		}
 	}
 
-
 	public void getMainCategory(String id) {
-		EndView.categoryView(MainCategoryDAO.getCategory(id));
+		try {
+			EndView.categoryView(MainCategoryDAO.getCategory(id));			
+		} catch (NoResultException e) {
+			System.out.println("데이터가 없습니다.");
+		} 
 	}
 
 	public void getAllMainCategory() {
-		EndView.allCategoryView(MainCategoryDAO.getAllCategory());
+		try {
+			EndView.allCategoryView(MainCategoryDAO.getAllCategory());			
+		} catch (IndexOutOfBoundsException e) {
+			System.out.println("카테고리가 존재하지 않습니다.");
+		} catch (NoResultException e) {
+			System.out.println("출력하려는 값이 존재하지 않습니다.");
+		}
 	}
 
+	
 	public void updateMainCategory(String id, int librarianId) {
-		MainCategoryDAO.updateCategoryLibrarianId(id, librarianId);
+		try {
+			MainCategoryDAO.updateCategoryLibrarianId(id, librarianId);
+		} catch (NullPointerException e) {
+			System.out.println("존재하지않는 분류 번호입니다.");
+		}
 	}
 
 	public void rentBook(int bookId, int userId) {
+		try {
 		BooksDAO.rentBook(bookId, userId);
+		} catch (NullPointerException e){
+			System.out.println("존재하지않는 번호가 지정되었습니다. 다시 확인해주세요.");
+		}
 	}
 
 	public void returnBook(int userId, int bookId) {
+		try {
 		BooksDAO.returnBook(userId, bookId);
+		} catch (NullPointerException e){
+			System.out.println("존재하지않는 번호가 지정되었습니다. 다시 확인해주세요.");
+		}
 	}
 	
 	public void returnAllBook(int userId) {
+		try {
 		BooksDAO.returnAllBook(userId);
+		} catch (NullPointerException e) {
+			System.out.println("존재하지 않는 사용자 번호입니다.");
+		}
 	}
 }
