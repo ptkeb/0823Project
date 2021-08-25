@@ -1,9 +1,10 @@
 package controller;
 
 import model.BooksDAO;
+import model.LibrarianDAO;
 import model.MainCategoryDAO;
 import model.UserDAO;
-import model.dto.MainCategoryDTO;
+import model.dto.LibrarianDTO;
 import view.EndView;
 
 public class Controller {
@@ -55,30 +56,31 @@ public class Controller {
 		UserDAO.deleteUser(id);
 	}
 
-	public void getLibrarian() {
-		// TODO Auto-generated method stub
+	public void getLibrarian(int librarianId) {
+		EndView.librarianView((LibrarianDTO)LibrarianDAO.getLibrarian(librarianId));
 		
 	}
 
 	public void getAllLibrarian() {
-		// TODO Auto-generated method stub
+		EndView.allLibrarianView(LibrarianDAO.getAllLibrarian());
 		
 	}
 
-	public void addLibrarian() {
-		// TODO Auto-generated method stub
+	public void addLibrarian(int id, String name, String offday) {
+		LibrarianDAO.addLibrarian(id, name, offday);
 		
 	}
 
-	public void updateLibrarian() {
-		// TODO Auto-generated method stub
+	public void updateLibrarian(int librarianId, String librarianName, String offDay) {
+		LibrarianDAO.updateLibrarian(librarianId, librarianName, offDay);
 		
 	}
 
-	public void deleteLibrarian() {
-		// TODO Auto-generated method stub
+	public void deleteLibrarian(int librarianId) {
+		LibrarianDAO.deleteLibrarian(librarianId);
 		
 	}
+
 
 	public void getMainCategory(String id) {
 		EndView.categoryView(MainCategoryDAO.getCategory(id));

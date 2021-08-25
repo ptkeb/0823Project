@@ -70,14 +70,19 @@ public class StartView {
 //		controller.getAllUser();
 //		
 //		System.out.println("9. 사서 조회 & 모든 사서 조회");
-//		controller.getLibrarian();
+//		controller.getLibrarian(1);
 //		controller.getAllLibrarian();
+//		
 //		System.out.println("10. 사서 추가");
-//		controller.addLibrarian();
+//		controller.addLibrarian(6, "김사서", "수요일");
+//		controller.addLibrarian(7, "박사서", "목요일");
+//		
 //		System.out.println("11. 사서 정보 변경");
-//		controller.updateLibrarian();
+//		controller.updateLibrarian(3, "서사서", "월요일");
+//		
 //		System.out.println("12. 사서 삭제");
-//		controller.deleteLibrarian();
+//		controller.deleteLibrarian(4);
+
 //		
 //		System.out.println("13. 분류 조회 & 모든 분류 조회");
 //		controller.getMainCategory("100");
