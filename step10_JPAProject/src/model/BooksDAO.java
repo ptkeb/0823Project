@@ -14,7 +14,7 @@ import model.util.Util;
 
 public class BooksDAO {
 	//책 추가
-	public static void addBook(String bookName, int categoryId, int renterId) {
+	public static void addBook(String bookName, String categoryId) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		
@@ -23,12 +23,13 @@ public class BooksDAO {
 		BooksDTO book = new BooksDTO();
 		book.setBookName(bookName);
 		book.setCategoryId(categoryId);
-		book.setRenterId(renterId);
+		book.setRenterId(null); //null 들어가나?
 		
 		em.persist(book);
 		
 		tx.commit();
 	}
+
 	
 	public static BooksDTO getBook(int bookId) {
 		EntityManager em = Util.getEntityManager();

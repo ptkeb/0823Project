@@ -1,11 +1,10 @@
- package model.dto;
+package model.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
@@ -21,26 +20,31 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 
-@NamedQuery(query = "select b from BOOKS b where b.bookId=:bookId", name = "Books.findByBookId")
-@NamedQuery(query = "select b from BOOKS b", name = "Books.findAllBooks")
+@NamedQuery(query = "select b from BOOKS b where b.bookId=:bookId", name = "BOOKS.findByBookId")
+@NamedQuery(query = "select b from BOOKS b", name = "BOOKS.findAllBooks")
 
 @Entity(name = "BOOKS")
-@SequenceGenerator(name="book_seq_gen", sequenceName="book_seq_id", initialValue=1, allocationSize=1)
+@SequenceGenerator(name="book_seq_gen", sequenceName="book_seq_id", initialValue=100, allocationSize=1)
 public class BooksDTO {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="book_seq_gen")
-	@Column(name="book_id")
+	@Column(name="bookid")
 	private int bookId;
 	
-	@Column(name="book_name")
+	@Column(name="bookname")
 	private String bookName;
 	
-	@Column(name="category_id")
-	private int categoryId;
+	@Column(name="categoryId")
+	private String categoryId;
 	
 	@ManyToOne
-	@JoinColumn(name="user_id")
-	private int renterId;
+	@JoinColumn(name="userId")
+	private UserDTO renterId;
+
+	@Override
+	public String toString() {
+		return "BooksDTO [bookId=" + bookId + ", bookName=" 
+				+ bookName + ", categoryId=" + categoryId + " 대여자 : " + renterId.getUserId() + "]";
+	}
 }
