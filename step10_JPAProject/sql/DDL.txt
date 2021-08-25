@@ -1,0 +1,37 @@
+DROP TABLE BOOKS cascade constraint;
+DROP TABLE LIBRARIAN cascade constraint;
+DROP TABLE LIBUSER cascade constraint;
+DROP TABLE MAINCATEGORY cascade constraint;
+
+--LIBUSER DDL
+CREATE TABLE LIBUSER (
+       userId          		NUMBER(20)  PRIMARY KEY,
+       userName             VARCHAR2(20),
+       userAddress         	VARCHAR2(20)
+);
+
+--BOOKS DDL
+CREATE TABLE BOOKS (
+	bookid 		NUMBER(20) PRIMARY KEY,
+	bookname		VARCHAR2(100),
+	categoryid 	VARCHAR2(20),
+	userid 		NUMBER(20)
+);
+
+--LIBRARIAN DDL
+CREATE TABLE LIBRARIAN (
+       librarianid        NUMBER(20)  PRIMARY KEY,
+       librarianname      VARCHAR2(20),
+       offday		      VARCHAR2(20)
+);
+
+--MAINCATEGORY DDL
+CREATE TABLE MAINCATEGORY (
+		maincategoryid			VARCHAR2(20) PRIMARY KEY,
+		maincategoryname		VARCHAR2(20),
+		librarianid				NUMBER(20)
+);
+
+ALTER TABLE MAINCATEGORY ADD FOREIGN KEY (librarianid) REFERENCES LIBRARIAN (librarianid);
+ALTER TABLE BOOKS ADD FOREIGN KEY (userid)  REFERENCES LIBUSER (userid);
+ALTER TABLE BOOKS ADD FOREIGN KEY (categoryId) REFERENCES MAINCATEGORY (mainCategoryId);

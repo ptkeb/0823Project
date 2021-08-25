@@ -80,7 +80,7 @@ public class Controller {
 		
 	}
 
-	public void getMainCategory(int id) {
+	public void getMainCategory(String id) {
 		EndView.categoryView(MainCategoryDAO.getCategory(id));
 	}
 
@@ -88,7 +88,7 @@ public class Controller {
 		EndView.allCategoryView(MainCategoryDAO.getAllCategory());
 	}
 
-	public void updateMainCategory(int id, int librarianId) {
+	public void updateMainCategory(String id, int librarianId) {
 		MainCategoryDAO.updateCategoryLibrarianId(id, librarianId);
 	}
 

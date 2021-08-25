@@ -1,5 +1,6 @@
 package model.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -25,7 +26,8 @@ import lombok.ToString;
 public class MainCategoryDTO {
 	@Id
 //	@OneToMany
-	private int mainCategoryId;
+	private String mainCategoryId;
+	
 	private String mainCategoryName;
 	
 //	@OneToOne
