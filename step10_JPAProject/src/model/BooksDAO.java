@@ -29,7 +29,6 @@ public class BooksDAO {
 		tx.commit();
 	}
 	
-	//대여 -> 서비스에 추가?
 	public static void rentBook(int bookId, int userId) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -39,9 +38,7 @@ public class BooksDAO {
 		UserDTO user = em.find(UserDTO.class, userId);
 		BooksDTO book = em.find(BooksDTO.class, bookId);
 
-		System.out.println(user);
 		book.setUserId(user);
-		System.out.println(book);
 		em.persist(user);
 		em.persist(book);
 		
@@ -62,6 +59,7 @@ public class BooksDAO {
 		
 		tx.commit();
 	}
+	
 	public static void returnAllBook(int userId) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();

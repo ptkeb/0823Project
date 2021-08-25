@@ -6,7 +6,7 @@ import model.dto.BooksDTO;
 import model.dto.LibrarianDTO;
 import model.dto.MainCategoryDTO;
 import model.dto.UserDTO;
-
+ 
 public class EndView {
 	public static void bookView(BooksDTO getBook) {
 		if (getBook.getUserId() != null) {
@@ -58,8 +58,6 @@ public class EndView {
 		}
 	}
 	
-
-
 	public static void categoryView(MainCategoryDTO category) {
 		System.out.println(category);
 	}
