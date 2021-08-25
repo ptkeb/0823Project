@@ -29,13 +29,16 @@ public class StartView {
 		
 		//완료
 //		controller.deleteBook(11);
-//		System.out.println("2. 책 추가");
-//		controller.addBook("추가 책이름1", "1000");
-//		controller.addBook("추가 책이름2", "200");
+//		controller.returnBook(2,2);
+//		
+		System.out.println("2. 책 추가");
+		controller.addBook("추가 책이름1", "000");
+		controller.addBook("추가 책이름2", "200");
 //		controller.addBook("추가 책이름3", "000");
 		
+//		controller.deleteBook(3);
 //		System.out.println("1. 책 조회  & 모든 책 조회");
-//		controller.getBook(12);
+//		controller.getBook(4);
 //		controller.getallBooks();
 //		
 //		//책의 어떤 정보를 변경할 지? - 우선 책이름 변경으로 구현
@@ -45,7 +48,7 @@ public class StartView {
 //		controller.getBook(1);
 		
 		//대여
-//		BooksDAO.rentBook(12,1);
+//		BooksDAO.rentBook(1,1);
 //		System.out.println("대여완료 후, 책 정보 확인");
 //		controller.getBook(12);
 //		
@@ -58,7 +61,7 @@ public class StartView {
 //		controller.getAllUser();
 //		
 //		System.out.println("6. 이용자 추가");
-//		controller.addUser(4,"장씨","평택");
+//		controller.addUser("장씨","평택");
 //		controller.getUser(4);
 //		
 //		System.out.println("7. 이용자 정보 변경");
@@ -82,7 +85,6 @@ public class StartView {
 //		
 //		System.out.println("12. 사서 삭제");
 //		controller.deleteLibrarian(4);
-
 //		
 //		System.out.println("13. 분류 조회 & 모든 분류 조회");
 //		controller.getMainCategory("100");

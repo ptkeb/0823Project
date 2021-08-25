@@ -9,11 +9,28 @@ import model.dto.UserDTO;
 
 public class EndView {
 	public static void bookView(BooksDTO getBook) {
-		System.out.println(getBook);
+		if (getBook.getUserId() != null) {
+			System.out.println(getBook);
+		} else {
+			System.out.println("[책 번호] " + getBook.getBookId() + "\n" +
+							   "[책 이름] " + getBook.getBookName() + "\n" +
+							   "[분류 번호] " + getBook.getCategoryId() + "\n" +
+							   "[대여자 번호] 현재 대여자 없음\n");
+		}
 	}
 	
 	public static void allBooksView(List<BooksDTO> getBook) {
-		System.out.println(getBook);
+		for (BooksDTO book : getBook) {
+			UserDTO user = book.getUserId();
+			if (user != null) {
+				System.out.println(getBook);
+			} else {
+				System.out.println("[책 번호] " + book.getBookId() + "\n" +
+								   "[책 이름] " + book.getBookName() + "\n" +
+								   "[분류 번호] " + book.getCategoryId() + "\n" +
+								   "[대여자 번호] 현재 대여자 없음\n");
+			}
+		}
 	}
 
 	public static void userView(UserDTO user) {
@@ -40,6 +57,4 @@ public class EndView {
 	public static void allLibrarianView(List<LibrarianDTO> allLibrarian) {
 		System.out.println(allLibrarian);
 	}
-
-
 }

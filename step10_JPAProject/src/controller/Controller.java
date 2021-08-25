@@ -4,6 +4,7 @@ import model.BooksDAO;
 import model.LibrarianDAO;
 import model.MainCategoryDAO;
 import model.UserDAO;
+import model.dto.BooksDTO;
 import model.dto.LibrarianDTO;
 import view.EndView;
 
@@ -12,11 +13,7 @@ public class Controller {
 	public static Controller getInstance() { return instance; }
 
 	public void getBook(int bookId) {
-		try {
-			EndView.bookView(BooksDAO.getBook(bookId));
-		} catch (NullPointerException e) {
-			System.out.println("대여자가 없는 책입니다.");
-		}
+		EndView.bookView(BooksDAO.getBook(bookId));
 	}
 
 	public void getallBooks() {
@@ -27,8 +24,10 @@ public class Controller {
 		BooksDAO.addBook(bookName, categoryId);
 	}
 
-	public void updateBook(int bookId, String bookName) {
-		BooksDAO.updateBook(bookId, bookName);
+	public void updateBook(int bookId, String bookName, int userId) { // 두번째파라미터뭐받지?
+		BooksDAO.updateBookCategory(bookId, bookName);
+		BooksDAO.updateBookName(bookId, bookName);
+		BooksDAO.updateBookUserId(bookId, userId);
 	}
 
 	public void deleteBook(int bookId) {
@@ -43,8 +42,8 @@ public class Controller {
 		EndView.allUserView(UserDAO.getAllUser());
 	}
 
-	public void addUser(int id, String name, String address) {
-		UserDAO.addUser(id, name, address);
+	public void addUser(String name, String address) {
+		UserDAO.addUser(name, address);
 	}
 
 	public void updateUser(int id, String name, String add) {
@@ -99,8 +98,7 @@ public class Controller {
 		
 	}
 
-	public void returnBook() {
-		// TODO Auto-generated method stub
-		
+	public void returnBook(int userId, int bookId) {
+		BooksDAO.returnBook(userId, bookId);
 	}
 }

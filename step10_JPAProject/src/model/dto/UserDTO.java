@@ -3,6 +3,7 @@ package model.dto;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,7 +27,7 @@ import lombok.ToString;
 
 @NamedQuery(name = "user.findById", query = "select u from LIBUSER u where u.userId = :userId ")
 @NamedQuery(name = "user.findAllById", query = "select u from LIBUSER u")
-@SequenceGenerator(name="member_seq_gen", sequenceName="member_seq_id", initialValue=1, allocationSize=50)
+@SequenceGenerator(name="member_seq_gen", sequenceName="member_seq_id", initialValue=1, allocationSize=1)
 
 @Entity(name = "LIBUSER")
 public class UserDTO {
@@ -41,6 +42,6 @@ public class UserDTO {
 	@Column(name="useraddress")
 	private String userAddress;
 	
-	@OneToMany(mappedBy="renterId") 
+	@OneToMany(mappedBy="userId") 
 	private List<BooksDTO> books = new ArrayList<>();
 }

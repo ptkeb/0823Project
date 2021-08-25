@@ -55,10 +55,13 @@ public class UserDAO {
 		tx.commit();
 	}
 	
-	public static void addUser(int id, String name, String address) {
+	public static void addUser(String name, String address) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
-		UserDTO user = new UserDTO(id,name,address, null);
+		UserDTO user = new UserDTO();
+		user.setUserName(name);
+		user.setUserAddress(address);
+		user.setBooks(null);
 		tx.begin();
 		em.persist(user);
 		tx.commit();
@@ -67,16 +70,13 @@ public class UserDAO {
 	public static void main (String[] args) {
 		EntityManager em = Util.getEntityManager();
 		
-		addUser(1,"홍길동", "서울");
-		System.out.println(getUser(1));
-		System.out.println(getAllUser());
-		updateUserAddress(2, "울릉도");
-		updateUserName(2, "김씨");
-		System.out.println(getUser(2));
-		deleteUser(1);
-		System.out.println(getAllUser());
-		
-		
-
+//		addUser(1,"홍길동", "서울");
+//		System.out.println(getUser(1));
+//		System.out.println(getAllUser());
+//		updateUserAddress(2, "울릉도");
+//		updateUserName(2, "김씨");
+//		System.out.println(getUser(2));
+		deleteUser(4);
+//		System.out.println(getAllUser());
 	}
 }
