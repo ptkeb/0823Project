@@ -3,7 +3,6 @@ package model.dto;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,7 +22,6 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 
 @NamedQuery(name = "user.findById", query = "select u from LIBUSER u where u.userId = :userId ")
 @NamedQuery(name = "user.findAllById", query = "select u from LIBUSER u")
