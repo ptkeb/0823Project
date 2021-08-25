@@ -30,6 +30,7 @@ public class StartView {
 		//완료
 //		controller.deleteBook(11);
 //		controller.returnBook(2,2);
+//		
 		System.out.println("2. 책 추가");
 		controller.addBook("추가 책이름1", "000");
 		controller.addBook("추가 책이름2", "200");
@@ -59,8 +60,8 @@ public class StartView {
 //		controller.getUser(1);
 //		controller.getAllUser();
 //		
-		System.out.println("6. 이용자 추가");
-		controller.addUser("장씨","평택");
+//		System.out.println("6. 이용자 추가");
+//		controller.addUser("장씨","평택");
 //		controller.getUser(4);
 //		
 //		System.out.println("7. 이용자 정보 변경");
@@ -84,7 +85,6 @@ public class StartView {
 //		
 //		System.out.println("12. 사서 삭제");
 //		controller.deleteLibrarian(4);
-
 //		
 //		System.out.println("13. 분류 조회 & 모든 분류 조회");
 //		controller.getMainCategory("100");
