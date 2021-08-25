@@ -39,7 +39,7 @@ public class BooksDTO {
 	private String categoryId;
 	
 	@ManyToOne
-	@JoinColumn(name="userId")
+	@JoinColumn(name="userId") 
 	private UserDTO userId;
 
 	@Override

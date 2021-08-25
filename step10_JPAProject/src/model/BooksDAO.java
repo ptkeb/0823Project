@@ -129,22 +129,6 @@ public class BooksDAO {
 		tx.commit();
 	}
 	
-	public static void updateBookUserId(int bookId, int userId) {
-		EntityManager em = Util.getEntityManager();
-		EntityTransaction tx = em.getTransaction();
-		
-		tx.begin();
-		
-		UserDTO user = em.find(UserDTO.class, userId);
-		BooksDTO book = em.find(BooksDTO.class, bookId);
-
-		book.setUserId(user);
-		
-		em.persist(book);
-		
-		tx.commit();
-	}
-	
 	public static void deleteBook(int bookId) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();

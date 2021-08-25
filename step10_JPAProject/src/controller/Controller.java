@@ -1,10 +1,14 @@
 package controller;
 
+import java.util.Arrays;
+import java.util.List;
+
+import javax.persistence.NoResultException;
+
 import model.BooksDAO;
 import model.LibrarianDAO;
 import model.MainCategoryDAO;
 import model.UserDAO;
-import model.dto.BooksDTO;
 import model.dto.LibrarianDTO;
 import view.EndView;
 
@@ -13,7 +17,12 @@ public class Controller {
 	public static Controller getInstance() { return instance; }
 
 	public void getBook(int bookId) {
-		EndView.bookView(BooksDAO.getBook(bookId));
+		try {
+			EndView.bookView(BooksDAO.getBook(bookId));
+		} catch (NoResultException e) {
+			//존재하지 않는 bookId일 경우
+			System.out.println("존재하지 않는 책 번호입니다.");
+		}
 	}
 
 	public void getallBooks() {
@@ -21,13 +30,20 @@ public class Controller {
 	}
 
 	public void addBook(String bookName, String categoryId) {
-		BooksDAO.addBook(bookName, categoryId);
+		List<String> list = Arrays.asList("000", "200", "300", "400", "500", "600", "700", "800", "900");
+		if (list.contains(categoryId)) {
+			BooksDAO.addBook(bookName, categoryId);
+		} else {
+			System.out.println("유효하지 않은 분류 번호입니다.");
+		}
 	}
 
-	public void updateBook(int bookId, String bookName, int userId) { // 두번째파라미터뭐받지?
-		BooksDAO.updateBookCategory(bookId, bookName);
+	public void updateBookName(int bookId, String bookName) { // 두번째파라미터뭐받지? 
 		BooksDAO.updateBookName(bookId, bookName);
-		BooksDAO.updateBookUserId(bookId, userId);
+	}
+	
+	public void updateBookCategory(int bookId, String categoryId) { // 두번째파라미터뭐받지? 
+		BooksDAO.updateBookCategory(bookId, categoryId);
 	}
 
 	public void deleteBook(int bookId) {
