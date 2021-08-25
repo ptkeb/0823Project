@@ -155,7 +155,8 @@ public class OuterController {
 						String librarianName = sc.next();
 						System.out.println("사서의 휴일을 입력해 주세요. ex)월요일");
 						String offDay = sc.next();
-						controller.updateLibrarian(librarianId, librarianName, offDay);
+						controller.updateLibrarianName(librarianId, librarianName);
+						controller.updateLibrarianOffDay(librarianId, offDay);
 						controller.getLibrarian(librarianId);
 						
 					} else if (num == 12) {
