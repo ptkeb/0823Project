@@ -50,7 +50,7 @@
 		</dependency>
 		 
 		<!-- @Slf4j 사용을 위한 library 설정 & log4j.properties 필요 -->
-	<dependency>
+		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.5</version>

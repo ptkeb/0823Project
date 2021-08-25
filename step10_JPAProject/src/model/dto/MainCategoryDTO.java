@@ -1,5 +1,6 @@
 package model.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -24,11 +25,9 @@ import lombok.ToString;
 @NamedQuery(name = "category.findAllById", query = "select c from MainCategory c")
 public class MainCategoryDTO {
 	@Id
-//	@OneToMany
-	private int mainCategoryId;
+	private String mainCategoryId;
+	
 	private String mainCategoryName;
 	
-//	@OneToOne
-//	@JoinColumn(name = "librarianId")
 	private int librarianId;
 }
