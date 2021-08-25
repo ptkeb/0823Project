@@ -57,6 +57,7 @@ public class StartView {
 //		controller.deleteUser();
 //		
 		System.out.println("9. 사서 조회 & 모든 사서 조회");
+
 		controller.getLibrarian(1);
 		controller.getAllLibrarian();
 		
@@ -72,6 +73,7 @@ public class StartView {
 		
 		System.out.println("12. 사서 삭제");
 		controller.deleteLibrarian(4);
+
 //		
 //		System.out.println("13. 분류 조회 & 모든 분류 조회");
 //		controller.getMainCategory();

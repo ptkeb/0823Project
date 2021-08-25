@@ -2,6 +2,7 @@ package controller;
 
 import model.BooksDAO;
 import model.LibrarianDAO;
+import model.dto.LibrarianDTO;
 import view.EndView;
 
 public class Controller {
@@ -13,7 +14,7 @@ public class Controller {
 	}
 
 	public void getallBooks() {
-		EndView.AllBooksView(BooksDAO.getAllBook());
+		EndView.allBooksView(BooksDAO.getAllBook());
 	}
 
 	public void addBook(String bookName, int categoryId, int renterId) {
@@ -53,13 +54,14 @@ public class Controller {
 		
 	}
 
-	public void getLibrarian(int id) {
-		EndView.LibrarianView(LibrarianDAO.getLibrarian(1));
+
+	public void getLibrarian(int librarianId) {
+		EndView.librarianView((LibrarianDTO)LibrarianDAO.getLibrarian(librarianId));
 		
 	}
 
 	public void getAllLibrarian() {
-		EndView.AllLibrarianView(LibrarianDAO.getAllLibrarian());
+		EndView.allLibrarianView(LibrarianDAO.getAllLibrarian());
 		
 	}
 
@@ -76,7 +78,7 @@ public class Controller {
 	public void deleteLibrarian(int librarianId) {
 		LibrarianDAO.deleteLibrarian(librarianId);
 		
-	}
+	}	
 
 	public void getMainCategory() {
 		// TODO Auto-generated method stub

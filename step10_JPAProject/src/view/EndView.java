@@ -10,17 +10,17 @@ public class EndView {
 		System.out.println(getBook);
 	}
 	
-	public static void AllBooksView(List<BooksDTO> getBook) {
+	public static void allBooksView(List<BooksDTO> getBook) {
 		System.out.println(getBook);
 	}
 
 	
-	public static void LibrarianView(LibrarianDTO librarian) {
+	public static void librarianView(LibrarianDTO librarian) {
 		System.out.println(librarian);
 		
 	}
 
-	public static void AllLibrarianView(List<LibrarianDTO> allLibrarian) {
+	public static void allLibrarianView(List<LibrarianDTO> allLibrarian) {
 		System.out.println(allLibrarian);
 		
 	}

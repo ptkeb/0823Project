@@ -27,7 +27,7 @@ public class LibrarianDAO {
 	
 	//9. 사서 조회 
 //	@Test
-	public static void getLibrarian(int id) {
+	public static LibrarianDTO getLibrarian(int id) {
 		EntityManager em = Util.getEntityManager();
 		
 		LibrarianDTO v = (LibrarianDTO)em.createNamedQuery("LibrarianDTO.findByLibrarianId").setParameter("librarianId", id).getSingleResult();
@@ -35,13 +35,13 @@ public class LibrarianDAO {
 		
 		em.close();
 		em = null;
-//		return v;
+		return v;
 	}
 		
 	
 	//& 모든 사서 조회
 //	@Test
-	public static void getAllLibrarian() {
+	public static List<LibrarianDTO> getAllLibrarian() {
 		EntityManager em = Util.getEntityManager();
 		
 		List<LibrarianDTO> v = em.createNamedQuery("LibrarianDTO.findAllByLibrarianId",LibrarianDTO.class).getResultList();
@@ -49,6 +49,7 @@ public class LibrarianDAO {
 		
 		em.close();
 		em = null;
+		return v;
 	}
 	
 	
