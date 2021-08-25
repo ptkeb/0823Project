@@ -34,9 +34,9 @@ public class StartView {
 //		controller.addBook("추가 책이름2", "200");
 //		controller.addBook("추가 책이름3", "000");
 		
-//		System.out.println("1. 책 조회  & 모든 책 조회");
-//		controller.getBook(12);
-//		controller.getallBooks();
+		System.out.println("1. 책 조회  & 모든 책 조회");
+		controller.getBook(1);
+		controller.getallBooks();
 //		
 //		//책의 어떤 정보를 변경할 지? - 우선 책이름 변경으로 구현
 //		System.out.println("3. 책 정보변경");
