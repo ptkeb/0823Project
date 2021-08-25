@@ -25,7 +25,7 @@ import lombok.ToString;
 @NamedQuery(query = "select b from BOOKS b", name = "BOOKS.findAllBooks")
 
 @Entity(name = "BOOKS")
-@SequenceGenerator(name="book_seq_gen", sequenceName="book_seq_id", initialValue=100, allocationSize=1)
+@SequenceGenerator(name="book_seq_gen", sequenceName="book_seq_id", initialValue=1, allocationSize=1)
 public class BooksDTO {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="book_seq_gen")
@@ -40,11 +40,13 @@ public class BooksDTO {
 	
 	@ManyToOne
 	@JoinColumn(name="userId")
-	private UserDTO renterId;
+	private UserDTO userId;
 
 	@Override
 	public String toString() {
-		return "BooksDTO [bookId=" + bookId + ", bookName=" 
-				+ bookName + ", categoryId=" + categoryId + " 대여자 : " + renterId.getUserId() + "]";
+		return "[책 번호] " + bookId + "\n" +
+			   "[책 이름] " + bookName + "\n" +
+			   "[분류 번호] " + categoryId + "\n" +
+			   "[대여자 번호] " + userId.getUserId();
 	}
 }
