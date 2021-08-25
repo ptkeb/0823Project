@@ -44,4 +44,12 @@ public class UserDTO {
 	
 	@OneToMany(mappedBy="userId") 
 	private List<BooksDTO> books = new ArrayList<>();
+	
+	public String toString() {
+		return "[사용자 번호] " + userId + "\n" +
+			   "[사용자 이름] " + userName + "\n" +
+			   "[사용자 주소] " + userAddress + "\n" +
+			   "[대여중인 책] " + books;
+
+	}
 }

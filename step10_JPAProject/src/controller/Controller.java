@@ -32,7 +32,7 @@ public class Controller {
 	}
 
 	public void addBook(String bookName, String categoryId) {
-		List<String> list = Arrays.asList("000", "200", "300", "400", "500", "600", "700", "800", "900");
+		List<String> list = Arrays.asList("000","100", "200", "300", "400", "500", "600", "700", "800", "900");
 		if (list.contains(categoryId)) {
 			BooksDAO.addBook(bookName, categoryId);
 		} else {
