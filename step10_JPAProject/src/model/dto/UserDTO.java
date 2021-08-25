@@ -1,5 +1,6 @@
 package model.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -17,29 +18,29 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Entity(name = "libuser")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
 
-@NamedQuery(name = "user.findById", query = "select u from UserDTO u where u.userId = :userId ")
-@NamedQuery(name = "user.findAllById", query = "select u from UserDTO u")
+@NamedQuery(name = "user.findById", query = "select u from LIBUSER u where u.userId = :userid ")
+@NamedQuery(name = "user.findAllById", query = "select u from LIBUSER u")
 @SequenceGenerator(name="member_seq_gen", sequenceName="member_seq_id", initialValue=1, allocationSize=50)
 
+@Entity(name = "LIBUSER")
 public class UserDTO {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="member_seq_gen")
-	@Column(name="user_id")
+	@Column(name="userid")
 	private int userId;
 	
-	@Column(name="user_name")
+	@Column(name="username")
 	private String userName;
 	
-	@Column(name="user_addres")
+	@Column(name="useraddress")
 	private String userAddress;
 	
-	@OneToMany(mappedBy="renterId")
-	List<BooksDTO> books;
+	@OneToMany(mappedBy="renterId") 
+	private List<BooksDTO> books = new ArrayList<>();
 }
