@@ -33,5 +33,4 @@ public class MainCategoryDAO {
 		category.setLibrarianId(librarianId);
 		tx.commit();
 	}
-	
 }

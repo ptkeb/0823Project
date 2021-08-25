@@ -25,12 +25,9 @@ import lombok.ToString;
 @NamedQuery(name = "category.findAllById", query = "select c from MainCategory c")
 public class MainCategoryDTO {
 	@Id
-//	@OneToMany
 	private String mainCategoryId;
 	
 	private String mainCategoryName;
 	
-//	@OneToOne
-//	@JoinColumn(name = "librarianId")
 	private int librarianId;
 }

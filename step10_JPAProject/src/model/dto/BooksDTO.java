@@ -1,4 +1,4 @@
- package model.dto;
+package model.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,8 +35,6 @@ public class BooksDTO {
 	@Column(name="bookname")
 	private String bookName;
 	
-//	@ManyToOne
-//	@JoinColumn(name = "mainCategoryId")
 	@Column(name="categoryId")
 	private String categoryId;
 	
@@ -49,5 +47,4 @@ public class BooksDTO {
 		return "BooksDTO [bookId=" + bookId + ", bookName=" 
 				+ bookName + ", categoryId=" + categoryId + " 대여자 : " + renterId.getUserId() + "]";
 	}
-	
 }
