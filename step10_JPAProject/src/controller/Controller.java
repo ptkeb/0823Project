@@ -11,15 +11,19 @@ public class Controller {
 	public static Controller getInstance() { return instance; }
 
 	public void getBook(int bookId) {
-		EndView.bookView(BooksDAO.getBook(bookId));
+		try {
+			EndView.bookView(BooksDAO.getBook(bookId));
+		} catch (NullPointerException e) {
+			System.out.println("대여자가 없는 책입니다.");
+		}
 	}
 
 	public void getallBooks() {
 		EndView.allBooksView(BooksDAO.getAllBook());
 	}
 
-	public void addBook(String bookName, int categoryId, int renterId) {
-		BooksDAO.addBook(bookName, categoryId, renterId);
+	public void addBook(String bookName, String categoryId, int renterId) {
+		BooksDAO.addBook(bookName, categoryId);
 	}
 
 	public void updateBook(int bookId, String bookName) {

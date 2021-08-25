@@ -20,10 +20,9 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 
-@NamedQuery(query = "select b from BOOKS b where b.bookId=:bookId", name = "Books.findByBookId")
-@NamedQuery(query = "select b from BOOKS b", name = "Books.findAllBooks")
+@NamedQuery(query = "select b from BOOKS b where b.bookId=:bookId", name = "BOOKS.findByBookId")
+@NamedQuery(query = "select b from BOOKS b", name = "BOOKS.findAllBooks")
 
 @Entity(name = "BOOKS")
 @SequenceGenerator(name="book_seq_gen", sequenceName="book_seq_id", initialValue=1, allocationSize=1)
@@ -39,9 +38,16 @@ public class BooksDTO {
 //	@ManyToOne
 //	@JoinColumn(name = "mainCategoryId")
 	@Column(name="categoryId")
-	private int categoryId;
+	private String categoryId;
 	
 	@ManyToOne
 	@JoinColumn(name="userId")
 	private UserDTO renterId;
+
+	@Override
+	public String toString() {
+		return "BooksDTO [bookId=" + bookId + ", bookName=" 
+				+ bookName + ", categoryId=" + categoryId + " 대여자 : " + renterId.getUserId() + "]";
+	}
+	
 }

@@ -13,7 +13,7 @@ import model.util.Util;
 
 public class BooksDAO {
 	//책 추가
-	public static void addBook(String bookName, int categoryId) {
+	public static void addBook(String bookName, String categoryId) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		
@@ -37,52 +37,46 @@ public class BooksDAO {
 		tx.begin();
 		
 		UserDTO user = em.find(UserDTO.class, userId);
-		System.out.println(user);
 		BooksDTO book = em.find(BooksDTO.class, bookId);
-		System.out.println(book);
+
+		book.setRenterId(user);
 		
-////		user.getBooks().add(book);
-//		
-////		em.persist(user);
+		em.persist(user);
 		em.persist(book);
 		
-		System.out.println("하하");
-		
 		tx.commit();
-		
-		System.out.println("대여완료");
 	}
 	
-	@Test
-	void test() {
-		EntityManager em = Util.getEntityManager();
-		EntityTransaction tx = em.getTransaction();
-		
-		tx.begin();
-		
-		UserDTO user = em.find(UserDTO.class, 1);
-		System.out.println("하하");
-		System.out.println(user);
-		BooksDTO book = em.find(BooksDTO.class, 1);
-		System.out.println(book);
-		
-////		user.getBooks().add(book);
+//	@Test
+//	void test() {
+//		EntityManager em = Util.getEntityManager();
+//		EntityTransaction tx = em.getTransaction();
 //		
-////		em.persist(user);
-		em.persist(book);
-		
-		
-		tx.commit();
-		
-		System.out.println("대여완료");
-	}
+//		tx.begin();
+//		
+//		UserDTO user = em.find(UserDTO.class, 1);
+//		System.out.println(user);
+//		BooksDTO book = em.find(BooksDTO.class, 1);
+//		
+//		user.getBooks().add(book);
+//		
+//		em.persist(user);
+//		em.persist(book);
+//		
+//		System.out.println(book);
+//		
+//		
+//		tx.commit();
+//		
+//		System.out.println("대여완료");
+//	}
 	
 	
 	public static BooksDTO getBook(int bookId) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		
-		List<BooksDTO> findBook = em.createNamedQuery("Books.findByBookId").setParameter("bookId", bookId).getResultList();
+		List<BooksDTO> findBook = em.createNamedQuery("BOOKS.findByBookId").setParameter("bookId", bookId).getResultList();
 		
 		BooksDTO findBookResult = findBook.get(0);
 		
@@ -93,7 +87,7 @@ public class BooksDAO {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		
-		List<BooksDTO> findBook = em.createNamedQuery("Books.findAllBooks").getResultList();
+		List<BooksDTO> findBook = em.createNamedQuery("BOOKS.findAllBooks").getResultList();
 		
 		return findBook;
 	}
