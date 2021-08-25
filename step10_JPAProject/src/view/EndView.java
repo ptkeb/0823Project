@@ -34,24 +34,42 @@ public class EndView {
 	}
 
 	public static void userView(UserDTO user) {
-		System.out.println(user);
+		if (user.getBooks() != null) {
+			System.out.println(user);
+		} else {
+			System.out.println(	"[사용자 번호] " + user.getUserId() + "\n" +
+		   						"[사용자 이름] " + user.getUserName() + "\n" +
+		   						"[사용자 주소] " + user.getUserAddress() + "\n" +
+								"[빌린 책] 현재 대여중인 책 없음\n");
+		}
 	}
 	
 	public static void allUserView(List<UserDTO> allUser) {
-		System.out.println(allUser);
+		for(UserDTO i : allUser) {
+			List<BooksDTO> book = i.getBooks();
+			if (book != null) {
+					System.out.println(i);
+			} else {
+				System.out.println(	"[사용자 번호] " + i.getUserId() + "\n" +
+						   			"[사용자 이름] " + i.getUserName() + "\n" +
+						   			"[사용자 주소] " + i.getUserAddress() + "\n" +
+									"[빌린 책] 현재 대여중인 책 없음\n");
+			}	
+		}
 	}
+	
 
-	public static void allCategoryView(List<MainCategoryDTO> allCategory) {
-		System.out.println(allCategory);
-	}
 
 	public static void categoryView(MainCategoryDTO category) {
 		System.out.println(category);
 	}
 	
+	public static void allCategoryView(List<MainCategoryDTO> allCategory) {
+		System.out.println(allCategory);
+	}
+	
 	public static void librarianView(LibrarianDTO librarian) {
 		System.out.println(librarian);
-		
 	}
 
 	public static void allLibrarianView(List<LibrarianDTO> allLibrarian) {
