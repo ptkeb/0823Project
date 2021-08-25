@@ -93,12 +93,15 @@ public class Controller {
 		MainCategoryDAO.updateCategoryLibrarianId(id, librarianId);
 	}
 
-	public void rentBook() {
-		// TODO Auto-generated method stub
-		
+	public void rentBook(int bookId, int userId) {
+		BooksDAO.rentBook(bookId, userId);
 	}
 
 	public void returnBook(int userId, int bookId) {
 		BooksDAO.returnBook(userId, bookId);
+	}
+	
+	public void returnAllBook(int userId) {
+		BooksDAO.returnAllBook(userId);
 	}
 }

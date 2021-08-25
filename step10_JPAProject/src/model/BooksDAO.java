@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,15 +39,16 @@ public class BooksDAO {
 		UserDTO user = em.find(UserDTO.class, userId);
 		BooksDTO book = em.find(BooksDTO.class, bookId);
 
+		System.out.println(user);
 		book.setUserId(user);
-		
+		System.out.println(book);
 		em.persist(user);
 		em.persist(book);
 		
 		tx.commit();
 	}
 	
-	public static void returnBook(int userId, int bookId) {
+	public static void returnBook(int bookId, int userId) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 		
@@ -60,6 +62,26 @@ public class BooksDAO {
 		
 		tx.commit();
 	}
+	public static void returnAllBook(int userId) {
+		EntityManager em = Util.getEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		List<BooksDTO> B1 = new ArrayList<>();
+		
+		tx.begin();
+		UserDTO user = em.find(UserDTO.class, userId);
+		Object[] book = user.getBooks().stream().filter(v -> v.getUserId().getUserId()==userId).toArray();
+		
+		for(Object i : book) {
+			B1.add((BooksDTO)i); 
+		}
+		for (BooksDTO i : B1) {
+			user.getBooks().remove(i);
+			i.setUserId(null);
+		}
+		em.persist(user);
+		tx.commit();
+	}
+	
 	
 	public static BooksDTO getBook(int bookId) {
 		EntityManager em = Util.getEntityManager();
@@ -135,7 +157,6 @@ public class BooksDAO {
 	}
 	
 	public static void main (String[] args) {
-		returnBook(2,2);
 	}
 	
 	/*
