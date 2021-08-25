@@ -22,7 +22,7 @@ public class Controller {
 		EndView.allBooksView(BooksDAO.getAllBook());
 	}
 
-	public void addBook(String bookName, String categoryId, int renterId) {
+	public void addBook(String bookName, String categoryId) {
 		BooksDAO.addBook(bookName, categoryId);
 	}
 

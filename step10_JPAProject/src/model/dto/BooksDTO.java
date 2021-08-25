@@ -25,7 +25,7 @@ import lombok.ToString;
 @NamedQuery(query = "select b from BOOKS b", name = "BOOKS.findAllBooks")
 
 @Entity(name = "BOOKS")
-@SequenceGenerator(name="book_seq_gen", sequenceName="book_seq_id", initialValue=1, allocationSize=1)
+@SequenceGenerator(name="book_seq_gen", sequenceName="book_seq_id", initialValue=100, allocationSize=1)
 public class BooksDTO {
 	@Id
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="book_seq_gen")

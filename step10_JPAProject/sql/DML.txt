@@ -40,3 +40,5 @@ INSERT INTO BOOKS VALUES(7,'엄마 나는 커서 개발자가 안 될래요', '600', 7);
 INSERT INTO BOOKS VALUES(8,'엄마 나는 커서 백수가 될래요', '700', 8);
 INSERT INTO BOOKS VALUES(9,'엄마 나는 커서 부자가 될래요', '800', 9);
 INSERT INTO BOOKS VALUES(10,'엄마 나는 커서 뭐가 될란가..', '900', 10);
+
+commit;
