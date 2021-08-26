@@ -15,18 +15,16 @@ public class UserDAO {
 
 	public static UserDTO getUser(int id) {
 		EntityManager em = Util.getEntityManager();
-		UserDTO user = em.createNamedQuery("user.findById",UserDTO.class)
-							.setParameter("userId", id).getSingleResult();
+		UserDTO user = em.createNamedQuery("user.findById", UserDTO.class).setParameter("userId", id).getSingleResult();
 		return user;
 	}
-	
+
 	public static List<UserDTO> getAllUser() {
 		EntityManager em = Util.getEntityManager();
-		List<UserDTO> user = em.createNamedQuery("user.findAllById",UserDTO.class)
-							.getResultList();
+		List<UserDTO> user = em.createNamedQuery("user.findAllById", UserDTO.class).getResultList();
 		return user;
 	}
-	
+
 	public static void deleteUser(int id) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -36,7 +34,7 @@ public class UserDAO {
 		em.flush();
 		tx.commit();
 	}
-	
+
 	public static void updateUserAddress(int id, String add) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -45,7 +43,7 @@ public class UserDAO {
 		user.setUserAddress(add);
 		tx.commit();
 	}
-	
+
 	public static void updateUserName(int id, String name) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -54,7 +52,7 @@ public class UserDAO {
 		user.setUserName(name);
 		tx.commit();
 	}
-	
+
 	public static void addUser(String name, String address) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -65,18 +63,5 @@ public class UserDAO {
 		tx.begin();
 		em.persist(user);
 		tx.commit();
-	}
-	
-	public static void main (String[] args) {
-		EntityManager em = Util.getEntityManager();
-		
-//		addUser(1,"홍길동", "서울");
-//		System.out.println(getUser(1));
-//		System.out.println(getAllUser());
-//		updateUserAddress(2, "울릉도");
-//		updateUserName(2, "김씨");
-//		System.out.println(getUser(2));
-		deleteUser(4);
-//		System.out.println(getAllUser());
 	}
 }

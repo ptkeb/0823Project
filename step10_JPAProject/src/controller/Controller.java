@@ -27,7 +27,6 @@ public class Controller {
 		try {
 			EndView.bookView(BooksDAO.getBook(bookId));
 		} catch (NoResultException e) {
-			//존재하지 않는 bookId일 경우
 			System.out.println("존재하지 않는 책입니다. 책 번호를 재확인해주세요.");
 		}
 	}

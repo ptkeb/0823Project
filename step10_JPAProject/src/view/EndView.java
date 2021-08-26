@@ -75,6 +75,4 @@ public class EndView {
 	public static void allLibrarianView(List<LibrarianDTO> allLibrarian) {
 		System.out.println(allLibrarian);
 	}
-
-
 }

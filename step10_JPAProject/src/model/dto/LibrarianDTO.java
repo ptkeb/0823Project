@@ -17,7 +17,6 @@ import lombok.ToString;
 @Setter
 @NamedQuery(query="select e from LIBRARIAN e where e.librarianId=:librarianId",name="LIBRARIAN.findByLibrarianId")
 @NamedQuery(query="select e from LIBRARIAN e", name="LIBRARIAN.findAllByLibrarianId")
-@ToString
 @Entity(name = "LIBRARIAN")
 public class LibrarianDTO {
 	@Id
@@ -27,4 +26,10 @@ public class LibrarianDTO {
 	private String librarianName;
 	
 	private String offDay;
+	
+	public String toString() {
+		return "[사서 번호] " + librarianId + "\n" +
+			   "[사서 이름] " + librarianName + "\n" +
+			   "[사서 휴일] " + offDay + "\n";
+	}
 }

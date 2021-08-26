@@ -13,7 +13,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class Util {
-	//entity manager
 	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("oracleDB");
 	public static EntityManager getEntityManager() {
 		return emf.createEntityManager();
