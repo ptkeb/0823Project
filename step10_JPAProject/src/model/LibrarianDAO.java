@@ -18,30 +18,29 @@ public class LibrarianDAO {
 	public static LibrarianDTO getLibrarian(int id) {
 		EntityManager em = Util.getEntityManager();
 
-		LibrarianDTO v = (LibrarianDTO) em.createNamedQuery("LIBRARIAN.findByLibrarianId")
-				.setParameter("librarianId", id).getSingleResult();
+		LibrarianDTO librarian = (LibrarianDTO) em.createNamedQuery("LIBRARIAN.findByLibrarianId").setParameter("librarianId", id).getSingleResult();
 
 		em.close();
 		em = null;
 
-		return v;
+		return librarian;
 	}
 
 	public static List<LibrarianDTO> getAllLibrarian() {
 		EntityManager em = Util.getEntityManager();
 
-		List<LibrarianDTO> v = em.createNamedQuery("LIBRARIAN.findAllByLibrarianId", LibrarianDTO.class)
-				.getResultList();
+		List<LibrarianDTO> librarian = em.createNamedQuery("LIBRARIAN.findAllByLibrarianId", LibrarianDTO.class).getResultList();
 
 		em.close();
 		em = null;
 
-		return v;
+		return librarian;
 	}
 
 	public static void addLibrarian(int id, String name, String offday) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
+		
 		tx.begin();
 
 		LibrarianDTO Librarian = new LibrarianDTO(id, name, offday);
@@ -86,6 +85,7 @@ public class LibrarianDAO {
 		LibrarianDTO librarian = em.find(LibrarianDTO.class, id);
 		em.remove(librarian);
 		em.flush();
+		
 		tx.commit();
 	}
 }
