@@ -2,7 +2,7 @@
 
 **Team-8 권대안, 김아라, 정은진**
 
-## 🗂 Librarian Service Project Github
+## 🗂 Librarian Service Project Github Notion
 
 ---
 
