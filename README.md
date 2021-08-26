@@ -8,11 +8,13 @@
 
 [GitHub - ptkeb/210823_Librarian_Service_Project](https://github.com/ptkeb/210823_Librarian_Service_Project)
 
+[Notion - Librarian_Service_Project](https://bit.ly/3sM8kXh)
+
 ## 🛠 모델링
 
 ---
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9c43b93f-9554-4112-8757-f4c79d1af44f/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/85170623/130909073-8155b196-688c-4402-adc5-97ae17eb05d1.png)
 
 ## 📂 기능 목록
 
@@ -520,99 +522,87 @@
 - Books 구현
     - 책 조회 & 모든 책 조회
 
-        ![책한권조회.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/83e663ea-23ab-42f8-a446-679ecacd22eb/책한권조회.png)
+        ![책한권조회](https://user-images.githubusercontent.com/85170623/130909132-d84f4a54-909a-4ab3-8ad7-2d5f028d38bc.PNG)
 
-        ![모든책조회1.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3dd23fc7-c502-4677-b685-0707a131c43f/모든책조회1.png)
-
-        ![모든책조회2.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/23d8beb0-639a-49ea-8afa-4da131ddf111/모든책조회2.png)
 
     - 책 추가
 
-        ![책추가1.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c8bb04fe-500d-40e1-b112-218535326659/책추가1.png)
+        ![책추가1](https://user-images.githubusercontent.com/85170623/130909512-de533930-4583-49c2-80af-86abc47bb431.PNG)
 
-        ![책추가2.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2db30732-298b-4e4e-9b58-37b371cb8860/책추가2.png)
-
+        ![책추가2](https://user-images.githubusercontent.com/85170623/130909514-68466e7a-2a1d-4912-b452-e226991d4a21.PNG)
     - 책 정보 변경
 
-        ![책변경.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7722aa57-5ff5-46dd-844d-3a183f84c7be/책변경.png)
+        ![책변경](https://user-images.githubusercontent.com/85170623/130909507-24c4389d-94e0-4553-a92f-6dd60e3593c6.PNG)
 
     - 책 삭제
 
-        ![책삭제1.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/05f37b52-ebbc-410d-bb5a-9b41b9fa7f7a/책삭제1.png)
+        ![책삭제1](https://user-images.githubusercontent.com/85170623/130909508-170efecb-20de-4cff-a032-5795e864d0dc.PNG)
 
-        ![책삭제3.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/294193e5-81d5-4960-8e5b-e41fe5a862d7/책삭제3.png)
+        
 
 - Rent & Return 구현
     - 책 대출
 
-        ![대출1.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/df47b8e6-ecaa-4590-8759-894dadbc73e5/대출1.png)
+        ![대출1](https://user-images.githubusercontent.com/85170623/130909477-7eebdd46-d6a0-4686-af67-ebee433d6cc5.PNG)
 
-        ![대출2.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e94a9912-e03a-46d5-a4d8-e553800f8662/대출2.png)
+        ![대출2](https://user-images.githubusercontent.com/85170623/130909478-9f83241a-92be-4424-9a19-1b2d5d8449ee.PNG)
 
-        ![대출3.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/08d54b13-93af-46b7-8005-659656b7796a/대출3.png)
+        
 
     - 책 반납
 
-        ![책반납.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/10cfa464-4aeb-4a08-9bcd-0f68c120557b/책반납.png)
+        ![책반납](https://user-images.githubusercontent.com/85170623/130909505-b2a2b50c-b6e3-455e-9cb8-00c2a64fbb75.PNG)
 
-        ![책한권조회.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6010e491-1fc5-436d-be7f-c506e8877df2/책한권조회.png)
+        ![책한권조회](https://user-images.githubusercontent.com/85170623/130909516-2cca4a19-de3a-412a-badf-679fc0993bfb.PNG)
 
 - User 구현
     - 이용자 조회 & 모든 이용자 조회
 
-        ![이용자조회1.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5c614237-0651-485e-9b5c-c12c07b11062/이용자조회1.png)
-
-        ![이용자조회2.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d2720de4-baff-4896-a952-7fd9956bd0e7/이용자조회2.png)
+        ![이용자조회1](https://user-images.githubusercontent.com/85170623/130909497-8fb4dc9f-7282-4a9a-be48-ea10c55a9157.PNG)
 
     - 이용자 추가
 
-        ![이용자추가1.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f5741dac-20a6-4595-88a3-a8dff9bc1e2f/이용자추가1.png)
-
-        ![이용자추가2.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c626e0d0-7d59-464c-a298-40feb7d2c2b4/이용자추가2.png)
+        ![이용자추가1](https://user-images.githubusercontent.com/85170623/130909500-2f7e5e44-f98c-40ea-ba6b-99a2b9c6727d.PNG)
+        
 
     - 이용자 정보 변경
 
-        ![이용자변경.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/55ba8081-6083-4f6e-824c-30ac1daed258/이용자변경.png)
+        ![이용자변경1](https://user-images.githubusercontent.com/85170623/130909490-8e7a9400-b52e-4442-b3e4-8ab5c89bd89b.PNG)
 
-        ![이용자변경2.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/24eec9c4-2bfd-457b-be99-ac05b962c0a7/이용자변경2.png)
 
     - 이용자 삭제
 
-        ![이용자삭제1.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/01d41bad-13f9-47e9-9a29-76a67c7f25be/이용자삭제1.png)
+        ![이용자삭제1](https://user-images.githubusercontent.com/85170623/130909492-fef1ce30-9068-4d94-ac29-52433c68d051.PNG)
 
-        ![이용자삭제2.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a54ce62d-29da-4254-9a78-ab8d4d6cd2d3/이용자삭제2.png)
+        
 
 - Librarian 구현
     - 사서 조회 & 모든 사서 조회
 
-        ![사서조회.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d95d4ce2-fe0f-4a89-ac60-6eba8e529939/사서조회.png)
+        ![사서조회](https://user-images.githubusercontent.com/85170623/130909487-b2b1b8e6-468f-4228-b4b3-a87b2dbc89bc.PNG)
 
     - 사서 추가
 
-        ![사서추가.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ae234a8b-9f07-48c2-8aa2-efebdd1ede1a/사서추가.png)
+        ![사서추가](https://user-images.githubusercontent.com/85170623/130909488-f1101f53-2764-4d8c-929e-7239e7816efd.PNG)
 
     - 사서 정보 변경
 
-        ![사서정보변경.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4652185c-29d1-4d96-a62c-1d7bbd7f778d/사서정보변경.png)
-
-        ![사서정보변경2.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e56b370c-2fcc-450f-bb11-3dee3a3348b5/사서정보변경2.png)
+        ![사서정보변경1](https://user-images.githubusercontent.com/85170623/130909485-83fbcb23-429c-4f40-ae22-19260e0e19c2.PNG)
 
     - 사서 삭제
 
-        ![사서삭제.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/02a4b993-e2fd-4184-9927-fdd771648e7e/사서삭제.png)
+        ![사서삭제](https://user-images.githubusercontent.com/85170623/130909484-7c7d5b92-c5c9-4c20-b5ea-a550a2e49594.PNG)
 
 - Main Category 구현
     - 대분류 조회 & 모든 대분류 조회
 
-        ![대분류조회1.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/09460b02-48fd-4991-b53d-c00fe405b01a/대분류조회1.png)
+        ![대분류조회1](https://user-images.githubusercontent.com/85170623/130909473-82be2132-502d-409e-bafc-49def7edc073.PNG)
 
-        ![대분류조회2.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5eb56817-f4bf-4ec2-86d4-91119e28a387/대분류조회2.png)
 
     - 대분류 정보 변경
 
-        ![대분류정보변경1.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4ddaec6b-587b-4825-bf05-3ebf5c47fd57/대분류정보변경1.png)
+        ![대분류정보변경1](https://user-images.githubusercontent.com/85170623/130909468-41bade13-7f86-4436-b64b-5e9159401a88.PNG)
 
-        ![대분류정보변경2.PNG](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c910022c-f1a9-4204-a5a5-07930b356578/대분류정보변경2.png)
 
 ## 💡 발생 문제
 
