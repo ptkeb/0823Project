@@ -14,7 +14,7 @@
 
 ---
 
-![Untitled](https://user-images.githubusercontent.com/85170623/130909073-8155b196-688c-4402-adc5-97ae17eb05d1.png)
+![basic_concept](https://user-images.githubusercontent.com/85170623/130922668-63c55f42-576f-4e82-b2ac-73f2c1a55992.png)
 
 ## 📂 기능 목록
 
