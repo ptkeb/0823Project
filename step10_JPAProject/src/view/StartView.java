@@ -198,12 +198,14 @@ public class StartView {
 					System.out.println("대출받을 사용자 번호를 입력해주세요.");
 					int userId = sc.nextInt();
 					controller.rentBook(bookId, userId);
+					controller.getBook(bookId);
 				
 				} else if (num == 16) {
 					// 16. 모든 책 반납
 					System.out.println("반납할 사용자 번호를 입력해주세요.");
 					int userId = sc.nextInt();
 					controller.returnAllBook(userId);
+					controller.getUser(userId);
 					
 				} else if (num == 17) {
 					trialEnd = true;

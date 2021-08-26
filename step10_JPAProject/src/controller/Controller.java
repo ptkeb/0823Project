@@ -36,6 +36,8 @@ public class Controller {
 			EndView.allBooksView(BooksDAO.getAllBook());
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println("등록되어있는 책이 존재하지 않습니다.");
+		} catch	(NullPointerException e) {
+			System.out.println("출력에 문제가 있습니다!");
 		}
 	}
 
