@@ -1,24 +1,18 @@
 package model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import org.junit.jupiter.api.Test;
-
 import model.dto.LibrarianDTO;
-import model.dto.UserDTO;
 import model.util.Util;
 
 public class LibrarianDAO {
 	public static LibrarianDTO getLibrarian(int id) {
 		EntityManager em = Util.getEntityManager();
 
-		LibrarianDTO librarian = (LibrarianDTO) em.createNamedQuery("LIBRARIAN.findByLibrarianId").setParameter("librarianId", id).getSingleResult();
+		LibrarianDTO librarian = (LibrarianDTO)em.createNamedQuery("LIBRARIAN.findByLibrarianId").setParameter("librarianId", id).getSingleResult();
 
 		em.close();
 		em = null;
@@ -44,6 +38,7 @@ public class LibrarianDAO {
 		tx.begin();
 
 		LibrarianDTO Librarian = new LibrarianDTO(id, name, offday);
+		
 		em.persist(Librarian);
 
 		tx.commit();
@@ -85,6 +80,7 @@ public class LibrarianDAO {
 
 		LibrarianDTO librarian = em.find(LibrarianDTO.class, id);
 		em.remove(librarian);
+		
 		em.flush();
 		
 		tx.commit();

@@ -20,10 +20,10 @@ CREATE SEQUENCE bookid_seq
 INCREMENT BY 1 
 START WITH 21;
 CREATE TABLE BOOKS (
-	bookid 		NUMBER(20) PRIMARY KEY,
-	bookname		 VARCHAR2(100),
-	categoryid 	VARCHAR2(20),
-	userid 		NUMBER(20)
+	bookid			NUMBER(20) PRIMARY KEY,
+	bookname		VARCHAR2(100),
+	categoryid 		VARCHAR2(20),
+	userid 			NUMBER(20)
 );
 
 --LIBRARIAN DDL

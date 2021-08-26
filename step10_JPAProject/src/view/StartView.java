@@ -4,7 +4,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import controller.Controller;
-import model.BooksDAO;
 
 public class StartView {
 	public static void main(String[] args) {

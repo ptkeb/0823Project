@@ -15,12 +15,14 @@ public class MainCategoryDAO {
 	public static MainCategoryDTO getCategory(String id) {
 		EntityManager em = Util.getEntityManager();
 		MainCategoryDTO category = em.createNamedQuery("category.findById", MainCategoryDTO.class).setParameter("mainCategoryId", id).getSingleResult();
+		
 		return category;
 	}
 
 	public static List<MainCategoryDTO> getAllCategory() {
 		EntityManager em = Util.getEntityManager();
 		List<MainCategoryDTO> category = em.createNamedQuery("category.findAllById", MainCategoryDTO.class).getResultList();
+		
 		return category;
 	}
 
@@ -29,6 +31,7 @@ public class MainCategoryDAO {
 		EntityTransaction tx = em.getTransaction();
 		List<LibrarianDTO> Lib = LibrarianDAO.getAllLibrarian();
 		ArrayList<Integer> list = new ArrayList<>();
+		
 		Lib.forEach(v -> list.add(v.getLibrarianId()));
 		
 		if (list.contains(librarianId)) {
@@ -42,5 +45,4 @@ public class MainCategoryDAO {
 			System.out.println("존재하지 않는 사서번호 입니다.");
 		}
 	}
-
 }
