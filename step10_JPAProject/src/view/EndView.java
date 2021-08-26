@@ -32,7 +32,7 @@ public class EndView {
 			}
 		}
 	}
-
+	
 	public static void userView(UserDTO user) {
 		if (user.getBooks() != null) {
 			System.out.println(user);
@@ -59,7 +59,6 @@ public class EndView {
 	}
 	
 	public static void categoryView(MainCategoryDTO category) {
-		
 		System.out.println(category);
 	}
 	

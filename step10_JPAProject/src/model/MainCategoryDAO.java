@@ -32,11 +32,13 @@ public class MainCategoryDAO {
 		List<LibrarianDTO> Lib = LibrarianDAO.getAllLibrarian();
 		ArrayList<Integer> list = new ArrayList<>();
 		Lib.forEach(v -> list.add(v.getLibrarianId()));
+		
 		if (list.contains(librarianId)) {
 			tx.begin();
+			
 			MainCategoryDTO category = em.find(MainCategoryDTO.class, id);
-
 			category.setLibrarianId(librarianId);
+			
 			tx.commit();
 		} else {
 			System.out.println("존재하지 않는 사서번호 입니다.");

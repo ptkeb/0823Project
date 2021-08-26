@@ -80,6 +80,7 @@ public class LibrarianDAO {
 	public static void deleteLibrarian(int id) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
+		
 		tx.begin();
 
 		LibrarianDTO librarian = em.find(LibrarianDTO.class, id);

@@ -66,6 +66,7 @@ public class BooksDAO {
 		List<BooksDTO> B1 = new ArrayList<>();
 
 		tx.begin();
+		
 		UserDTO user = em.find(UserDTO.class, userId);
 		Object[] book = user.getBooks().stream().filter(v -> v.getUserId().getUserId() == userId).toArray();
 
@@ -77,6 +78,7 @@ public class BooksDAO {
 			i.setUserId(null);
 		}
 		em.persist(user);
+		
 		tx.commit();
 	}
 
@@ -135,6 +137,7 @@ public class BooksDAO {
 
 		BooksDTO book = em.find(BooksDTO.class, bookId);
 		em.remove(book);
+		
 		tx.commit();
 	}
 }

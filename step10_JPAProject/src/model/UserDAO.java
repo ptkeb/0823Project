@@ -28,28 +28,37 @@ public class UserDAO {
 	public static void deleteUser(int id) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
+		
 		tx.begin();
+		
 		UserDTO user = em.find(UserDTO.class, id);
 		em.remove(user);
 		em.flush();
+		
 		tx.commit();
 	}
 
 	public static void updateUserAddress(int id, String add) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
+		
 		tx.begin();
+		
 		UserDTO user = em.find(UserDTO.class, id);
 		user.setUserAddress(add);
+		
 		tx.commit();
 	}
 
 	public static void updateUserName(int id, String name) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
+		
 		tx.begin();
+		
 		UserDTO user = em.find(UserDTO.class, id);
 		user.setUserName(name);
+		
 		tx.commit();
 	}
 
@@ -60,8 +69,11 @@ public class UserDAO {
 		user.setUserName(name);
 		user.setUserAddress(address);
 		user.setBooks(null);
+		
 		tx.begin();
+		
 		em.persist(user);
+		
 		tx.commit();
 	}
 }
