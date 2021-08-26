@@ -21,6 +21,11 @@
 ---
 
 - **Entity**
+
+    <details>
+    <summary>BooksDTO</summary>
+    <div markdown="1">
+
     - **BooksDTO**
 
         ```java
@@ -49,6 +54,12 @@
         	}
         }
         ```
+    </div>
+    </details>
+
+    <details>
+    <summary>LibrarianDTO</summary>
+    <div markdown="1">
 
     - **LibrarianDTO**
 
@@ -78,6 +89,12 @@
         	}
         }
         ```
+    </div>
+    </details>
+
+    <details>
+    <summary>MainCategoryDTO</summary>
+    <div markdown="1">
 
     - **MainCategoryDTO**
 
@@ -106,6 +123,12 @@
         	}
         }
         ```
+    </div>
+    </details>
+
+    <details>
+    <summary>UserDTO</summary>
+    <div markdown="1">
 
     - **UserDTO**
 
@@ -144,8 +167,15 @@
         	}
         }
         ```
+    </div>
+    </details>
 
-- **Books**
+    
+    <details>
+    <summary>Books</summary>
+    <div markdown="1">
+
+    
     - 책 조회 & 모든 책 조회
 
         ```java
@@ -235,8 +265,13 @@
         		tx.commit();
         	}
         ```
-
-- **Rent & Return**
+    </div>
+    </details>
+    
+    <details>
+    <summary>Rent & Return</summary>
+    <div markdown="1">
+    
     - 책 대출
 
         ```java
@@ -296,8 +331,13 @@
         		tx.commit();
         	}
         ```
+    </div>
+    </details>
 
-- **User**
+    <details>
+    <summary>User</summary>
+    <div markdown="1">
+    
     - 이용자 조회 & 모든 이용자 조회
 
         ```java
@@ -377,8 +417,14 @@
         		tx.commit();
         	}
         ```
+    </div>
+    </details>
 
-- **Librarian**
+
+    <details>
+    <summary>Librarian</summary>
+    <div markdown="1">
+
     - 사서 조회 & 모든 사서 조회
 
         ```java
@@ -471,8 +517,13 @@
         		tx.commit();
         	}
         ```
+    </div>
+    </details>
 
-- **MainCategory**
+    <details>
+    <summary>MainCategory</summary>
+    <div markdown="1">
+    
     - 분류 조회 & 모든 분류 조회
 
         ```java
@@ -514,6 +565,12 @@
         		}
         	}
         ```
+    </div>
+    </details>
+
+
+
+
 
 ## ⚙️ 기능 구현
 
