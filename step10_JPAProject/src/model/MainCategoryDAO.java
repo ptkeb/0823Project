@@ -14,15 +14,13 @@ public class MainCategoryDAO {
 
 	public static MainCategoryDTO getCategory(String id) {
 		EntityManager em = Util.getEntityManager();
-		MainCategoryDTO category = em.createNamedQuery("category.findById", MainCategoryDTO.class)
-								   .setParameter("mainCategoryId", id).getSingleResult();
+		MainCategoryDTO category = em.createNamedQuery("category.findById", MainCategoryDTO.class).setParameter("mainCategoryId", id).getSingleResult();
 		return category;
 	}
 
 	public static List<MainCategoryDTO> getAllCategory() {
 		EntityManager em = Util.getEntityManager();
-		List<MainCategoryDTO> category = em.createNamedQuery("category.findAllById", MainCategoryDTO.class)
-										 .getResultList();
+		List<MainCategoryDTO> category = em.createNamedQuery("category.findAllById", MainCategoryDTO.class).getResultList();
 		return category;
 	}
 

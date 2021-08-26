@@ -51,8 +51,7 @@ public class BooksDAO {
 		tx.begin();
 
 		UserDTO user = em.find(UserDTO.class, userId);
-		Optional<BooksDTO> bookOpt = (Optional<BooksDTO>) (user.getBooks().stream().filter(v -> v.getBookId() == bookId)
-				.findAny());
+		Optional<BooksDTO> bookOpt = (Optional<BooksDTO>) (user.getBooks().stream().filter(v -> v.getBookId() == bookId).findAny());
 		BooksDTO book = bookOpt.get();
 		book.setUserId(null);
 		user.getBooks().remove(book);
@@ -86,8 +85,7 @@ public class BooksDAO {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
 
-		BooksDTO findBook = (BooksDTO) em.createNamedQuery("BOOKS.findByBookId").setParameter("bookId", bookId)
-				.getSingleResult();
+		BooksDTO findBook = (BooksDTO) em.createNamedQuery("BOOKS.findByBookId").setParameter("bookId", bookId).getSingleResult();
 
 		return findBook;
 	}
