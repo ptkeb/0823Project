@@ -26,34 +26,32 @@
     <summary>BooksDTO</summary>
     <div markdown="1">
 
-    - **BooksDTO**
+    ```java
+    @Entity(name = "BOOKS")
+    public class BooksDTO {
+        @Id
+        @Column(name="bookid")
+        private int bookId;
+        
+        @Column(name="bookname")
+        private String bookName;
+        
+        @Column(name="categoryId")
+        private String categoryId;
+        
+        @ManyToOne
+        @JoinColumn(name="userId") 
+        private UserDTO userId;
 
-        ```java
-        @Entity(name = "BOOKS")
-        public class BooksDTO {
-        	@Id
-        	@Column(name="bookid")
-        	private int bookId;
-        	
-        	@Column(name="bookname")
-        	private String bookName;
-        	
-        	@Column(name="categoryId")
-        	private String categoryId;
-        	
-        	@ManyToOne
-        	@JoinColumn(name="userId") 
-        	private UserDTO userId;
-
-        	@Override
-        	public String toString() {
-        		return "[책 번호] " + bookId + "\n" +
-        			   "[책 이름] " + bookName + "\n" +
-        			   "[분류 번호] " + categoryId + "\n" +
-        			   "[대여자 번호] " + userId.getUserId();
-        	}
+        @Override
+        public String toString() {
+            return "[책 번호] " + bookId + "\n" +
+                    "[책 이름] " + bookName + "\n" +
+                    "[분류 번호] " + categoryId + "\n" +
+                    "[대여자 번호] " + userId.getUserId();
         }
-        ```
+    }
+    ```
     </div>
     </details>
 
@@ -61,34 +59,32 @@
     <summary>LibrarianDTO</summary>
     <div markdown="1">
 
-    - **LibrarianDTO**
+    ```java
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Getter
+    @Setter
 
-        ```java
-        @AllArgsConstructor
-        @NoArgsConstructor
-        @Getter
-        @Setter
+    @NamedQuery(query="select e from LIBRARIAN e where e.librarianId=:librarianId",name="LIBRARIAN.findByLibrarianId")
+    @NamedQuery(query="select e from LIBRARIAN e", name="LIBRARIAN.findAllByLibrarianId")
+    @Entity(name = "LIBRARIAN")
+    public class LibrarianDTO {
+        @Id
+        @Column(name = "librarianId")
+        private int librarianId;
+        
+        private String librarianName;
+        
+        private String offDay;
 
-        @NamedQuery(query="select e from LIBRARIAN e where e.librarianId=:librarianId",name="LIBRARIAN.findByLibrarianId")
-        @NamedQuery(query="select e from LIBRARIAN e", name="LIBRARIAN.findAllByLibrarianId")
-        @Entity(name = "LIBRARIAN")
-        public class LibrarianDTO {
-        	@Id
-        	@Column(name = "librarianId")
-        	private int librarianId;
-        	
-        	private String librarianName;
-        	
-        	private String offDay;
-
-        	@Override
-        	public String toString() {
-        		return "[사서 번호] " + librarianId + "\n" +
-        			   "[사서 이름] " + librarianName + "\n" +
-        			   "[휴무 요일] " + offDay + "\n";
-        	}
+        @Override
+        public String toString() {
+            return "[사서 번호] " + librarianId + "\n" +
+                    "[사서 이름] " + librarianName + "\n" +
+                    "[휴무 요일] " + offDay + "\n";
         }
-        ```
+    }
+    ```
     </div>
     </details>
 
@@ -96,33 +92,31 @@
     <summary>MainCategoryDTO</summary>
     <div markdown="1">
 
-    - **MainCategoryDTO**
+    ```java
+    @Getter
+    @Setter
+    @AllArgsConstructor
+    @NoArgsConstructor
 
-        ```java
-        @Getter
-        @Setter
-        @AllArgsConstructor
-        @NoArgsConstructor
-
-        @Entity(name = "MainCategory")
-        @NamedQuery(name = "category.findById", query = "select c from MainCategory c where c.mainCategoryId = :mainCategoryId ")
-        @NamedQuery(name = "category.findAllById", query = "select c from MainCategory c")
-        public class MainCategoryDTO {
-        	@Id
-        	private String mainCategoryId;
-        	
-        	private String mainCategoryName;
-        	
-        	private int librarianId;
-        	
-        	@Override
-        	public String toString() {
-        		return "[분류 번호] " + mainCategoryId + "\n" +
-        			   "[분류 이름] " + mainCategoryName + "\n" +
-        			   "[담당 사서 번호] " + librarianId + "\n";
-        	}
+    @Entity(name = "MainCategory")
+    @NamedQuery(name = "category.findById", query = "select c from MainCategory c where c.mainCategoryId = :mainCategoryId ")
+    @NamedQuery(name = "category.findAllById", query = "select c from MainCategory c")
+    public class MainCategoryDTO {
+        @Id
+        private String mainCategoryId;
+        
+        private String mainCategoryName;
+        
+        private int librarianId;
+        
+        @Override
+        public String toString() {
+            return "[분류 번호] " + mainCategoryId + "\n" +
+                    "[분류 이름] " + mainCategoryName + "\n" +
+                    "[담당 사서 번호] " + librarianId + "\n";
         }
-        ```
+    }
+    ```
     </div>
     </details>
 
@@ -130,46 +124,43 @@
     <summary>UserDTO</summary>
     <div markdown="1">
 
-    - **UserDTO**
+    ```java
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Getter
+    @Setter
 
-        ```java
-        @AllArgsConstructor
-        @NoArgsConstructor
-        @Getter
-        @Setter
+    @NamedQuery(name = "user.findById", query = "select u from LIBUSER u where u.userId = :userId ")
+    @NamedQuery(name = "user.findAllById", query = "select u from LIBUSER u")
+    @SequenceGenerator(name="member_seq_gen", sequenceName="member_seq_id", initialValue=1, allocationSize=1)
 
-        @NamedQuery(name = "user.findById", query = "select u from LIBUSER u where u.userId = :userId ")
-        @NamedQuery(name = "user.findAllById", query = "select u from LIBUSER u")
-        @SequenceGenerator(name="member_seq_gen", sequenceName="member_seq_id", initialValue=1, allocationSize=1)
+    @Entity(name = "LIBUSER")
+    public class UserDTO {
+        @Id
+        @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="member_seq_gen")
+        @Column(name="userid")
+        private int userId;
+        
+        @Column(name="username")
+        private String userName;
+        
+        @Column(name="useraddress")
+        private String userAddress;
+        
+        @OneToMany(mappedBy="userId") 
+        private List<BooksDTO> books = new ArrayList<>();
+        
+        public String toString() {
+            return "[사용자 번호] " + userId + "\n" +
+                    "[사용자 이름] " + userName + "\n" +
+                    "[사용자 주소] " + userAddress + "\n" +
+                    "[대여중인 책] " + books + "\n";
 
-        @Entity(name = "LIBUSER")
-        public class UserDTO {
-        	@Id
-        	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="member_seq_gen")
-        	@Column(name="userid")
-        	private int userId;
-        	
-        	@Column(name="username")
-        	private String userName;
-        	
-        	@Column(name="useraddress")
-        	private String userAddress;
-        	
-        	@OneToMany(mappedBy="userId") 
-        	private List<BooksDTO> books = new ArrayList<>();
-        	
-        	public String toString() {
-        		return "[사용자 번호] " + userId + "\n" +
-        			   "[사용자 이름] " + userName + "\n" +
-        			   "[사용자 주소] " + userAddress + "\n" +
-        			   "[대여중인 책] " + books + "\n";
-
-        	}
         }
-        ```
+    }
+    ```
     </div>
     </details>
-
     
     <details>
     <summary>Books</summary>
