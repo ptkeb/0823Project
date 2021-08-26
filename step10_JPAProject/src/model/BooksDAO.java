@@ -12,7 +12,6 @@ import model.dto.UserDTO;
 import model.util.Util;
 
 public class BooksDAO {
-	//책 추가
 	public static void addBook(String bookName, String categoryId) {
 		EntityManager em = Util.getEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -137,10 +136,6 @@ public class BooksDAO {
 		em.remove(book);
 		tx.commit();
 	}
-	
-	public static void main (String[] args) {
-	}
-	
 	/*
 	 * List<BooksDTO> B1 = new ArrayList<>();
 		UserDTO user = em.find(UserDTO.class, 5);

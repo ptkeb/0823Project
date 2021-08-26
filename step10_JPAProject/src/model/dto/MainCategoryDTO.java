@@ -18,7 +18,6 @@ import lombok.ToString;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 
 @Entity(name = "MainCategory")
 @NamedQuery(name = "category.findById", query = "select c from MainCategory c where c.mainCategoryId = :mainCategoryId ")
@@ -30,4 +29,11 @@ public class MainCategoryDTO {
 	private String mainCategoryName;
 	
 	private int librarianId;
+	
+	public String toString() {
+		return "[대분류 번호] " + mainCategoryId + "\n" +
+			   "[대분류 이름] " + mainCategoryName + "\n" +
+			   "[담당 사서] " + librarianId + "\n";
+
+	}
 }
