@@ -38,9 +38,9 @@ public class BooksDAO {
 		BooksDTO book = em.find(BooksDTO.class, bookId);
 
 		book.setUserId(user);
-		em.persist(user);
 		em.persist(book);
-
+		em.persist(user);
+		
 		tx.commit();
 	}
 

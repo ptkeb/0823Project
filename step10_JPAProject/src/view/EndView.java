@@ -59,6 +59,7 @@ public class EndView {
 	}
 	
 	public static void categoryView(MainCategoryDTO category) {
+		
 		System.out.println(category);
 	}
 	

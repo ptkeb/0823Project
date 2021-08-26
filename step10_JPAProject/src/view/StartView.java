@@ -62,10 +62,10 @@ public class StartView {
 					System.out.println("변경할 책 번호를 입력해주세요");
 					int bookId = sc.nextInt();
 					controller.getBook(bookId);
-					System.out.println("변경할 책 이름을 입력해 주세요");
+					System.out.println("어떤 이름으로 변경하시겠습니까?");
 					String bookName = sc.next();
 					controller.updateBookName(bookId, bookName);
-					System.out.println("변경할 책 분류를 입력해주세요");
+					System.out.println("어떤 대분류로 변경하시겠습니까?");
 					String categoryId = sc.next();
 					controller.updateBookCategory(bookId, categoryId);
 					controller.getBook(bookId);
@@ -107,9 +107,9 @@ public class StartView {
 					System.out.println("변경할 사용자 번호를 입력해 주세요.");
 					int userId = sc.nextInt();
 					controller.getUser(userId);
-					System.out.println("변경할 사용자 이름을 입력해주세요.");
+					System.out.println("어떤 이름으로 변경하시겠습니까?");
 					String userName = sc.next();
-					System.out.println("변경할 사용자 주소를 입력해주세요.");
+					System.out.println("어떤 주소로 변경하시겠습니까?");
 					String userAddress = sc.next();
 					controller.updateUserAddress(userId, userAddress);
 					controller.updateUserName(userId, userName);
@@ -139,11 +139,11 @@ public class StartView {
 					
 				} else if (num == 10) {
 					// 10. 사서 추가
-					System.out.println("추가할 사서번호를 입력해주세요. 6번이후만 가능합니다.");
+					System.out.println("추가할 사서 번호를 입력해주세요. 6번이후만 가능합니다.");
 					int librarianId = sc.nextInt();
-					System.out.println("사서의 이름을 입력해주세요.");
+					System.out.println("추가할 사서 이름을 입력해주세요.");
 					String librarianName = sc.next();
-					System.out.println("사서의 휴일을 입력해 주세요. ex)월요일");
+					System.out.println("휴무일을 입력해주세요. ex)월요일");
 					String offDay = sc.next();
 					controller.addLibrarian(librarianId, librarianName, offDay);
 					controller.getLibrarian(librarianId);
@@ -153,9 +153,9 @@ public class StartView {
 					System.out.println("변경할 사서번호를 입력해주세요.");
 					int librarianId = sc.nextInt(); 
 					controller.getLibrarian(librarianId);
-					System.out.println("사서의 이름을 입력해주세요");
+					System.out.println("어떤 이름으로 변경하시겠습니까?");
 					String librarianName = sc.next();
-					System.out.println("사서의 휴일을 입력해 주세요. ex)월요일");
+					System.out.println("휴무일을 어떤 요일로 변경하시겠습니까? 입력해 주세요. ex)월요일");
 					String offDay = sc.next();
 					controller.updateLibrarianName(librarianId, librarianName);
 					controller.updateLibrarianOffDay(librarianId, offDay);
@@ -186,7 +186,7 @@ public class StartView {
 					// 14. 분류 정보 변경 (담당사서만)
 					System.out.println("변경할 분류번호를 입력해주세요.");
 					String id = sc.next();
-					System.out.println("변경할 담당 사서를 입력해주세요.");
+					System.out.println("변경할 담당 사서 번호를 입력해주세요.");
 					int librarianId = sc.nextInt();
 					controller.updateMainCategory(id, librarianId);
 					controller.getMainCategory(id);
@@ -198,14 +198,12 @@ public class StartView {
 					System.out.println("대출받을 사용자 번호를 입력해주세요.");
 					int userId = sc.nextInt();
 					controller.rentBook(bookId, userId);
-					controller.getBook(bookId);
 				
 				} else if (num == 16) {
 					// 16. 모든 책 반납
 					System.out.println("반납할 사용자 번호를 입력해주세요.");
 					int userId = sc.nextInt();
 					controller.returnAllBook(userId);
-					controller.getUser(userId);
 					
 				} else if (num == 17) {
 					trialEnd = true;

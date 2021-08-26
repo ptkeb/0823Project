@@ -30,10 +30,10 @@ public class MainCategoryDTO {
 	
 	private int librarianId;
 	
+	@Override
 	public String toString() {
-		return "[대분류 번호] " + mainCategoryId + "\n" +
-			   "[대분류 이름] " + mainCategoryName + "\n" +
-			   "[담당 사서] " + librarianId + "\n";
-
+		return "[분류 번호] " + mainCategoryId + "\n" +
+			   "[분류 이름] " + mainCategoryName + "\n" +
+			   "[담당 사서 번호] " + librarianId + "\n";
 	}
 }
