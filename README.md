@@ -182,9 +182,9 @@
     INCREMENT BY 1 
     START WITH 21;
     CREATE TABLE LIBUSER (
-        userId				NUMBER(20)  PRIMARY KEY,
-        userName			VARCHAR2(20),
-        userAddress			VARCHAR2(20)
+        userId              NUMBER(20)  PRIMARY KEY,
+        userName                VARCHAR2(20),
+        userAddress             VARCHAR2(20)
     );
 
     --BOOKS DDL
