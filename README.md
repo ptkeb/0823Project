@@ -1,6 +1,6 @@
 **도서관 사서가 이용하는 검색 프로그램**
 
-**8조 권대안, 김아라, 정은진**
+**Team-8 권대안, 김아라, 정은진**
 
 ## 🗂 Librarian Service Project Github
 
