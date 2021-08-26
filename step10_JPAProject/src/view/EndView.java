@@ -63,7 +63,9 @@ public class EndView {
 	}
 	
 	public static void allCategoryView(List<MainCategoryDTO> allCategory) {
-		System.out.println(allCategory);
+		for (MainCategoryDTO i : allCategory) {
+			System.out.println(i);
+		}
 	}
 	
 	public static void librarianView(LibrarianDTO librarian) {
